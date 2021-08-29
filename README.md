@@ -10,3 +10,4 @@
 
 - 27/08/21 // Created the website from scratch using flexbox and knowledge from Week 01 and Week 02.
 - 28/08/21 // Updated the design and finalize the home page for initial commit to GitHub.
+- 29/08/21 // Updated the design of home page, modified website responsiveness for mobile devices.
