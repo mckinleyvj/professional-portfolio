@@ -1,6 +1,6 @@
-# hw-week02-professional-portfolio
+# professional-portfolio
 
-## Week 02 - Creating a professional portfolio
+## Repository Description:
 
 - I will be creating a professional portfolio page which will be used in the future.
 - This page will showcase the background technical skills I have as well as the projects that I have completed over the last 10 years.
