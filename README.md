@@ -13,27 +13,33 @@
 - 29/08/21 // Updated the design of home page, modified website responsiveness for mobile devices.
 - 31/08/21 // Fixed Page responsiveness for mobile devices. Added about.html and set links.
 - 02/09/21 // Added description, links and images to webpage. Finalize design.
-- 02/09/21 // Create backup copy for multiple pages & CSS file.
-  // Revert Design back to single page with Sections.
-  // Update Links & CSS codes.
-  // Update Media Query codes.
-  // Double check codes & to remove redundant codes.
-  // Final testing and removal of other pages by moving into dump folder.
-  // Commit to GitHub with latest update & Update Readme.MD
+- 02/09/21  - Create backup copy for multiple pages & CSS file.
+            - Revert Design back to single page with Sections.
+            - Update Links & CSS codes.
+            - Update Media Query codes.
+            - Double check codes & to remove redundant codes.
+            - Final testing and removal of other pages by moving into dump folder.
+            - Commit to GitHub with latest update & Update Readme.MD
 
 ## Screenshots:
 
-![image](https://user-images.githubusercontent.com/87624839/131703071-b773039e-313c-42f8-8ed9-77e51cb1bf48.png)
+![image](https://user-images.githubusercontent.com/87624839/131791198-fbb46ed7-0106-4d2b-b114-70c228eb7d65.png)
 Home Page
 
-![image](https://user-images.githubusercontent.com/87624839/131703172-1b753f9e-8c43-4d37-babb-182c22d22180.png)
+![image](https://user-images.githubusercontent.com/87624839/131791224-117a6375-0568-481c-85cf-31e565ddc2db.png)
 About Me Page
 
-![image](https://user-images.githubusercontent.com/87624839/131703257-efec09cb-78b7-4b3d-97f1-7c785b9f4ee2.png)
+![image](https://user-images.githubusercontent.com/87624839/131791248-d5daee56-d332-4cc7-b376-97a0da92d57f.png)
 Work Page
 
-![image](https://user-images.githubusercontent.com/87624839/131703313-fa13c8f1-1e30-4385-8ac3-83566192af56.png)
+![image](https://user-images.githubusercontent.com/87624839/131791264-0a68386a-040b-470a-baf8-35a82f01e291.png)
 Contact Me Page
+
+![image](https://user-images.githubusercontent.com/87624839/131791285-375ed74e-be27-4784-84ef-4bf9986fc935.png)
+Page Responsiveness - Mobile Device
+
+![image](https://user-images.githubusercontent.com/87624839/131791308-85646380-3125-4714-a3e1-5a9b92630287.png)
+Page Responsiveness - Tablet
 
 ## Related Links:
 
