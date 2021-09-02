@@ -13,8 +13,16 @@
 - 29/08/21 // Updated the design of home page, modified website responsiveness for mobile devices.
 - 31/08/21 // Fixed Page responsiveness for mobile devices. Added about.html and set links.
 - 02/09/21 // Added description, links and images to webpage. Finalize design.
+- 02/09/21 // Create backup copy for multiple pages & CSS file.
+  // Revert Design back to single page with Sections.
+  // Update Links & CSS codes.
+  // Update Media Query codes.
+  // Double check codes & to remove redundant codes.
+  // Final testing and removal of other pages by moving into dump folder.
+  // Commit to GitHub with latest update & Update Readme.MD
 
 ## Screenshots:
+
 ![image](https://user-images.githubusercontent.com/87624839/131703071-b773039e-313c-42f8-8ed9-77e51cb1bf48.png)
 Home Page
 
@@ -28,5 +36,6 @@ Work Page
 Contact Me Page
 
 ## Related Links:
+
 - GitHub Repository: https://github.com/mckinleyvj/professional-portfolio
 - GitHub Live URL: https://mckinleyvj.github.io/professional-portfolio/
