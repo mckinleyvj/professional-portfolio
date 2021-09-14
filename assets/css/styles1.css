@@ -445,8 +445,6 @@ BODY - GLOBAL BODY SECTION
 }
 
 .Storyline-B figure img:hover {
-	-moz-box-shadow: 0 0 10px var(--shadow);
-	-webkit-box-shadow: 0 0 10px var(--shadow);
 	box-shadow: 0 0 10px var(--shadow);
 }
 
@@ -499,6 +497,7 @@ BODY - WORK SECTION
 	/* top: 0px; */
 	border-radius: 10px;
 	z-index: 50;
+	font-size: 18px;
 }
 
 .work-content-container {
@@ -591,12 +590,57 @@ footer {
 /*------------------------------------
 MEDIA QUERIES
 ------------------------------------*/
+@media screen and (max-width: 1620px) {
+}
+
 /*--------Media of 1280px x 960px----------*/
 /*----On screens that are 1280px or less---*/
 /*-----------------HD Screens--------------*/
 @media screen and (max-width: 1280px) {
-	.card-content {
-		padding: 90px 10px 50px 10px;
+	/*._body_container_inner {
+		width: 100%;
+	} */
+	._body_container_inner {
+		width: 90%;
+	}
+
+	.home-content-1 strong,
+	.home-content-1 .greet {
+		font-size: calc(30px - 0.3vw);
+	}
+	.home-content-1 .greet-desc {
+		font-size: calc(18px - 0.3vw);
+	}
+	.next a {
+		font-size: calc(18px - 0.3vw);
+	}
+	.home-content-2 img {
+		height: calc(400px - 7vw);
+	}
+	.paragraph-context,
+	.paragraph-context span {
+		margin-bottom: 25px;
+		line-height: 1.5;
+		/* font-weight: 300; */
+		font-size: calc(18px - 0.4vw);
+	}
+	.Storyline-B figure {
+		padding: 0 15px;
+	}
+
+	.Storyline-B figure figcaption {
+		font-size: calc(16px - 0.4vw);
+		margin: 20px 0;
+	}
+	.Storyline-B figure img {
+		height: calc(100px - 3vw);
+	}
+	.work-content-inner h2 {
+		font-size: calc(18px - 0.4vw);
+		padding-top: 10px;
+	}
+	.work-content-container figcaption {
+		font-size: calc(18px - 0.4vw);
 	}
 }
 
@@ -604,7 +648,7 @@ MEDIA QUERIES
 /*----------------Old Laptops--------------*/
 @media screen and (max-width: 1024px) {
 	/*HOME*/
-	.home-content-1 .greet,
+	/* .home-content-1 .greet,
 	.home-content-1 strong,
 	.home-content-1 .next,
 	.home-content-1 .greet-desc,
@@ -636,10 +680,10 @@ MEDIA QUERIES
 
 	.next a {
 		font-size: 18px;
-	}
+	} */
 
 	/*ABOUT ME*/
-	.Storyline-A {
+	/* .Storyline-A {
 		width: 70%;
 	}
 	.Storyline-B {
@@ -669,10 +713,10 @@ MEDIA QUERIES
 		height: 75px;
 		padding: 15px;
 		margin: 15px;
-	}
+	} */
 
 	/* WORK */
-	.work-content-inner h2 {
+	/* .work-content-inner h2 {
 		font-size: 22px;
 		border-bottom: 1px dashed var(--dirtywhite);
 		text-shadow: 3px 3px var(--alittle_black);
@@ -680,10 +724,10 @@ MEDIA QUERIES
 	}
 	.work-content-container {
 		width: 100%;
-	}
+	} */
 
 	/*CONTACT */
-	form {
+	/* form {
 		width: 70%;
 	}
 	form h3 {
@@ -694,7 +738,7 @@ MEDIA QUERIES
 	.text-input,
 	label {
 		font-size: 16px;
-	}
+	} */
 }
 
 /*--------Media of 800px x 600px----------*/
@@ -705,12 +749,10 @@ MEDIA QUERIES
 		position: fixed;
 		top: 0px;
 		width: 100vw;
-		/* margin: 0 auto; */
 		background-color: var(--super_black);
 		z-index: 100;
-		/* height: 50px; */
 	}
-
+	/*
 	._header_inner_container {
 		justify-content: center;
 		padding-left: 0px;
@@ -770,22 +812,111 @@ MEDIA QUERIES
 	.home-content-1 .greet-desc,
 	.next a {
 		padding: 0px;
-	}
+	} */
 }
 
 /*--------Media of 425px ----------*/
 /*--------Large Phones----------*/
 @media screen and (max-width: 425px) {
-	._card_container_home {
-		padding: 0px 25px 0px 25px;
+	._body_container {
+		width: 100vw;
+	}
+	._body_container_inner {
+		width: 100vw;
+		/* flex: 1 0 auto; */
+		text-align: -webkit-center;
+	}
+	._header_container_main {
+		display: block;
+		width: 100%;
+	}
+	._header_inner_container h2 {
+		/* width: 167px; */
+		font-size: 18px;
+		color: var(--orange);
+		padding-left: 5px;
+	}
+	._header_inner_container h2 {
+		/* width: 200px; */
+		font-size: calc(18px - 0.3vw);
+		color: var(--orange);
+		/* padding-left: 5px; */
 	}
 
+	._header_inner_internal_links ul li a {
+		font-size: 16px;
+		/* background-color: transparent; */
+		letter-spacing: 2px;
+	}
+
+	._card_container_home,
+	._card_container_inner_home {
+		display: block;
+		width: 100%;
+	}
+
+	.home-content-1 {
+		padding: 70px 0px 0px 0px;
+	}
+
+	.home-content-1 strong,
+	.home-content-1 .greet {
+		font-size: calc(30px - 4vw);
+	}
+	.home-content-1 .greet-desc {
+		font-size: calc(18px - 1.8vw);
+	}
+	.next a {
+		font-size: calc(18px - 1.8vw);
+	}
+	.home-content-2 {
+		padding: 0px;
+		float: center;
+	}
+
+	.home-content-2 img {
+		height: calc(400px - 50vw);
+	}
+	.paragraph-context,
+	.paragraph-context span {
+		margin-bottom: 10px;
+		/* line-height: 1.5; */
+		/* font-weight: 300; */
+		font-size: calc(18px - 2vw);
+	}
+	.Storyline-B figure {
+		padding: 0 15px;
+	}
+
+	.Storyline-B figure figcaption {
+		font-size: calc(16px - 0.4vw);
+		margin: 20px 0;
+	}
+	.Storyline-B figure img {
+		height: calc(100px - 3vw);
+	}
+	.work-content-inner h2 {
+		font-size: calc(18px - 0.4vw);
+		padding-top: 10px;
+	}
+	.work-content-container figcaption {
+		font-size: calc(18px - 0.4vw);
+	}
+
+	/* ._card_container_home {
+		padding: 0px 25px 0px 25px;
+	}*/
+
 	.card-content {
-		padding: 90px 10px 0px 10px;
-		color: var(--dirtywhite);
+		padding: 90px 0px 0px 0px;
 		align-content: center;
 	}
 
+	.Storyline-A {
+		/* flex: 1 0 60%; */
+		padding: 20px 20px 0px 20px;
+	}
+	/*
 	.home-content-1 strong {
 		font-size: 17px;
 		padding-bottom: 10px;
@@ -890,91 +1021,18 @@ MEDIA QUERIES
 	.text-input,
 	label {
 		font-size: 14px;
-	}
+	} */
 }
 
 /*--------Media of 375px----------*/
 /*--------Medium Phones----------*/
 @media screen and (max-width: 375px) {
-	._card_container_home {
-		padding: 0px 5px 0px 5px;
-	}
-	._card_container_inner_home {
-		padding: 120px 0px 100px 0px;
-	}
-	.home-content-1 .greet {
-		font-size: 16px;
-	}
-	.home-content-1 strong {
-		font-size: 16px;
-	}
-	.home-content-1 .greet-desc {
-		line-height: 1;
-		font-size: 12px;
-	}
-	.home-content-2 img {
-		height: 80%;
-	}
-	.card-content-inner {
-		flex-direction: column;
-		align-items: center;
-		padding: 20px 5px 20px 5px;
-	}
-	.paragraph-context {
-		line-height: 1;
-		text-align: justify;
-	}
-	.paragraph-context span {
-		line-height: 1;
-	}
-	.Storyline-A {
-		width: 100%;
-		padding: 0px;
-	}
-	.Storyline-B {
-		width: 100%;
-	}
-
-	.card-content {
-		padding: 90px 5px 0px 5px;
-	}
-
-	.work-content-inner {
-		padding: 0px 10px 0px 10px;
-	}
-	.work-content-container {
-		width: 100%;
-		padding: 0px;
-		margin: 0px;
-	}
-	.work-content-container figure {
-		margin: 4px;
-		line-height: 0px;
-	}
-	.work-content-container figcaption {
-		bottom: 120px;
-	}
-	form {
-		width: 80%;
-	}
-	form h3 {
-		margin-top: 25px;
-		font-size: 100%;
-	}
-	.paragraph-context,
-	.paragraph-context span,
-	.work-content-container figcaption,
-	form p,
-	.text-input,
-	label {
-		font-size: 14px;
-	}
 }
 
 /*--------Media of 325px----------*/
 /*--------Old Small Phones----------*/
 @media screen and (max-width: 325px) {
-	h1,
+	/* h1,
 	h2,
 	h3,
 	h4,
@@ -1080,7 +1138,7 @@ MEDIA QUERIES
 	.text-input,
 	label {
 		font-size: 14px;
-	}
+	} */
 }
 
 /*END OF CODE*/
