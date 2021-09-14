@@ -16,7 +16,7 @@ GLOBAL SELECTOR
 ------------------------------------*/
 * {
 	font-family: monospace, "Caveat", verdana, sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	/* line-height: 35px; */
 	color: var(--dirtywhite);
 }
@@ -74,6 +74,13 @@ HEADER SECTION
 	/* height: 60px; */
 }
 
+._header_container_main {
+	width: 50%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+
 ._header_inner_container {
 	display: flex;
 	align-self: center;
@@ -84,7 +91,7 @@ HEADER SECTION
 	/* justify-content: flex-start; */
 	/* align-items: center; */
 	z-index: 80;
-	flex-direction: row;
+	/* flex-direction: row; */
 	/* flex-wrap: nowrap; */
 	/* padding: 5px; */
 	border-right: 5px solid;
@@ -132,7 +139,7 @@ HEADER SECTION
 }
 
 ._header_inner_container_1 {
-	width: 300px;
+	width: 350px;
 	z-index: 50;
 	/* position: fixed; */
 	/* background-image: linear-gradient(
@@ -155,6 +162,10 @@ HEADER SECTION
 ._header_inner_internal_links {
 	/* height: 40px; */
 	align-items: center;
+	/* width: 309px; */
+	justify-content: center;
+	display: flex;
+	align-self: center;
 }
 
 ._header_inner_internal_links ul {
@@ -177,7 +188,7 @@ HEADER SECTION
 	text-decoration: underline;
 	/* border-bottom: px solid var(--dirtywhite); */
 	font-weight: bold;
-	font-size: 16px;
+	/* font-size: 16px; */
 	transition: 500ms;
 	/* box-shadow: 0 0 25px var(--shadow); */
 	border-radius: 50px;
@@ -208,10 +219,11 @@ HEADER SECTION
 	/* justify-content: center; */
 	/* flex-direction: row; */
 	flex-wrap: nowrap;
-	flex-grow: 0;
-	flex-shrink: 0;
+	/* flex-grow: 0; */
+	/* flex-shrink: 0; */
 	/* height: 40px; */
 	padding: 5px;
+	flex: 0 0 auto;
 }
 
 ._header_inner_external_links ul li,
@@ -239,6 +251,17 @@ BODY - HOME SECTION
 		var(--super_black)
 	);
 	padding-top: 48px;
+}
+
+._body_container_inner {
+	/* width: 70%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center; */
+	width: 70%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
 }
 
 ._card_container_home {
@@ -383,7 +406,7 @@ BODY - GLOBAL BODY SECTION
 
 .Storyline-A {
 	/* flex: 1 0 60%; */
-	padding: 50px;
+	padding: 50px 50px 0px 50px;
 }
 
 .Storyline-B {
@@ -431,7 +454,7 @@ BODY - GLOBAL BODY SECTION
 .paragraph-context span {
 	margin-bottom: 25px;
 	line-height: 1.5;
-	font-weight: 300;
+	/* font-weight: 300; */
 	text-align: justify;
 	font-size: 18px;
 	cursor: default;
