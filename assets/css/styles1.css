@@ -215,13 +215,7 @@ HEADER SECTION
 ._header_inner_internal_links,
 ._header_inner_external_links {
 	display: flex;
-	/* flex-direction: row; */
-	/* justify-content: center; */
-	/* flex-direction: row; */
 	flex-wrap: nowrap;
-	/* flex-grow: 0; */
-	/* flex-shrink: 0; */
-	/* height: 40px; */
 	padding: 5px;
 	flex: 0 0 auto;
 }
@@ -475,7 +469,6 @@ BODY - WORK SECTION
 	align-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	/* flex-direction: column; */
 }
 
 .work-content-inner h2 {
@@ -851,12 +844,19 @@ MEDIA QUERIES
 
 	._card_container_home,
 	._card_container_inner_home {
-		display: block;
+		flex-direction: column;
 		width: 100%;
 	}
 
+	._header_inner_container,
+	._header_inner_container_1,
+	._header_inner_internal_links,
+	._header_inner_external_links {
+		justify-content: center;
+	}
+
 	.home-content-1 {
-		padding: 70px 0px 0px 0px;
+		padding: 0;
 	}
 
 	.home-content-1 strong,
@@ -893,7 +893,7 @@ MEDIA QUERIES
 		margin: 20px 0;
 	}
 	.Storyline-B figure img {
-		height: calc(100px - 3vw);
+		height: calc(100px - 8vw);
 	}
 	.work-content-inner h2 {
 		font-size: calc(18px - 0.4vw);
@@ -915,6 +915,27 @@ MEDIA QUERIES
 	.Storyline-A {
 		/* flex: 1 0 60%; */
 		padding: 20px 20px 0px 20px;
+	}
+
+	.Storyline-B {
+		padding-top: 25px;
+		flex-direction: column;
+	}
+	.work-content-container {
+		flex-direction: column;
+	}
+	.work-content-inner {
+		display: block;
+	}
+	.contact-content-inner {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	form {
+		width: 100%;
+		padding-top: 30px;
 	}
 	/*
 	.home-content-1 strong {
