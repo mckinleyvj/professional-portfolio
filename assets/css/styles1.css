@@ -904,15 +904,23 @@ MEDIA QUERIES
 	.work-content-inner {
 		display: block;
 	}
+	.work-content-container img {
+		opacity: 0.5;
+	}
 	.contact-content-inner {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		line-height: 1.5;
 	}
 
 	form {
 		width: 100%;
 		padding-top: 30px;
+	}
+	form h3 {
+		font-size: 100%;
+		color: var(--orange);
 	}
 	._header_inner_container_1 {
 		width: 100%;
