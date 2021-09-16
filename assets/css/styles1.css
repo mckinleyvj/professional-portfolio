@@ -391,17 +391,13 @@ BODY - WORK SECTION
 	text-align: left;
 	border-bottom: 1px dashed var(--dirtywhite);
 	text-shadow: 3px 3px var(--alittle_black);
-	/* margin: 20px; */
 }
 
 .work-content-container figcaption {
 	color: var(--dirtywhite);
-	/* font-weight: 300; */
 	text-align: center;
 	position: relative;
-	/* border-radius: 10px; */
 	z-index: 50;
-	/* font-size: 16px; */
 }
 
 .work-content-container {
@@ -495,9 +491,6 @@ MEDIA QUERIES
 /*----On screens that are 1280px or less---*/
 /*-----------------HD Screens--------------*/
 @media screen and (max-width: 1280px) {
-	/*._body_container_inner {
-		width: 100%;
-	} */
 	._body_container_inner {
 		width: 90%;
 	}
