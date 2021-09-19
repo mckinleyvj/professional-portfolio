@@ -1,4 +1,4 @@
-# professional-portfolio
+# Professional Portfolio
 
 ## Repository Description:
 
