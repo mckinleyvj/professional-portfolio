@@ -396,9 +396,9 @@ BODY - WORK SECTION
 }
 
 .work-content-inner h2 {
-	font-size: 18px;
+	font-size: 30px;
 	text-align: left;
-	border-bottom: 1px dashed var(--dirtywhite);
+	/* border-bottom: 1px solid var(--dirtywhite); */
 	text-shadow: 3px 3px var(--alittle_black);
 }
 
@@ -407,6 +407,7 @@ BODY - WORK SECTION
 	text-align: center;
 	position: relative;
 	z-index: 50;
+	font-weight: normal;
 }
 
 .work-content-container {
@@ -424,15 +425,11 @@ BODY - WORK SECTION
 	width: 33.33%;
 }
 
-.work-content-container figure a {
-	/* width: 100%; */
-}
-
 .work-content-container img {
-	height: 150px;
+	height: 200px;
 	opacity: 0.3;
 	border-radius: 15px;
-	border: 1px dashed var(--alittle_purple);
+	border: 1px solid var(--dirtywhite);
 	padding: 5px;
 	width: 100%;
 }
