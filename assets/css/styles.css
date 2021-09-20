@@ -599,7 +599,7 @@ MEDIA QUERIES
 	}
 	._header_container_main {
 		display: block;
-		width: 100%;
+		width: 100vw;
 	}
 	._header_inner_container h2 {
 		font-size: 18px;
@@ -694,7 +694,7 @@ MEDIA QUERIES
 		flex-direction: column;
 	}
 	.work-content-container figure {
-		width: 100%;
+		width: 100vw;
 	}
 	.work-content-inner {
 		display: block;
@@ -713,7 +713,7 @@ MEDIA QUERIES
 		text-align: center;
 		color: var(--orange);
 		font-size: 16px;
-		width: 100%;
+		width: 100vw;
 	}
 }
 
