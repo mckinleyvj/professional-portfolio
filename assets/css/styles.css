@@ -414,13 +414,18 @@ BODY - WORK SECTION
 	flex-wrap: wrap;
 	justify-content: center;
 	flex: 1 1 auto;
+	/* display: list-item; */
 }
 
 .work-content-container figure {
 	display: flex;
 	flex-direction: column;
 	padding: 15px;
-	width: 25%;
+	width: 33.33%;
+}
+
+.work-content-container figure a {
+	/* width: 100%; */
 }
 
 .work-content-container img {
@@ -429,7 +434,7 @@ BODY - WORK SECTION
 	border-radius: 15px;
 	border: 1px dashed var(--alittle_purple);
 	padding: 5px;
-	width: -webkit-fill-available;
+	width: 100%;
 }
 
 .work-content-container img:hover {
@@ -537,6 +542,7 @@ MEDIA QUERIES
 	.work-content-container figure {
 		width: 33.33%;
 	}
+
 	.contact-content-inner {
 		display: flex;
 		justify-content: flex-start;
