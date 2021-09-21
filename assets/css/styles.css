@@ -187,8 +187,8 @@ HEADER SECTION
 
 .time-now {
 	position: fixed;
-	top: 55px;
-	text-align: center;
+	top: 18px;
+	text-align: left;
 	color: var(--orange);
 	font-size: 16px;
 	width: 100%;

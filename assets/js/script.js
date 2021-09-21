@@ -1,18 +1,24 @@
-var timeDisplayEl = $('#time-now');
-var sendBtn = $('#sendBtn');
+var $timeDisplayEl = $('#time-now');
+var $sendBtn = $('#sendBtn');
+var $workcontentDesc = $('work-content-desc');
 
-timeDisplayEl.attr("class", "time-now");
+$timeDisplayEl.attr("class", "time-now");
 
 function displayTime() {
     var rightNow = moment().format('hh:mm:ss a');
-    timeDisplayEl.text(rightNow);
+    $timeDisplayEl.text(rightNow);
   }
-
 setInterval(displayTime, 1000);
+
+function printWorkContentDesc() {
+  console.log('print the desc');
+}
+
+printWorkContentDesc();
 
 $(document).ready(function () {
 
-  sendBtn.on('click', function(event) {
+  $sendBtn.on('click', function(event) {
     event.preventDefault();
 
     var username = $('#usernameTxt').val();
