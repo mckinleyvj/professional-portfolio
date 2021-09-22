@@ -1,13 +1,16 @@
 var $timeDisplayEl = $('#time-now');
 var $sendBtn = $('#sendBtn');
-var $workcontentDesc = $('work-content-desc');
+var $username = $('#usernameTxt');
+var $email = $('#emailTxt');
+var $message = $('#commentTxt');
 
 $timeDisplayEl.attr("class", "time-now");
 
 function displayTime() {
     var rightNow = moment().format('hh:mm:ss a');
     $timeDisplayEl.text(rightNow);
-  }
+}
+
 setInterval(displayTime, 1000);
 
 function printWorkContentDesc() {
@@ -21,16 +24,18 @@ $(document).ready(function () {
   $sendBtn.on('click', function(event) {
     event.preventDefault();
 
-    var username = $('#usernameTxt').val();
-    var email = $('#emailTxt').val();
-    var message = $('#commentTxt').val();
+    var userName = $username.val();
+    var userMail = $email.val();
+    var userMsg = $message.val();
 
-    console.log(username + " of " + email + " sent you a message. The message is " + message);
+    console.log(userName + " of " + userMail + " sent you a message. The message is " + userMsg);
 
-    alert("Feature not yet available. Please contact me through the provided contact details.")
-    // username.innerHTML = "";
-    // email.innerHTML = "";
-    // message.innerHTML = "";
+    alert("Feature not yet available. Please contact me through the provided contact details.");
+    $username.innerHTML = "";
+    $email.innerHTML = "";
+    $message.innerHTML = "";
+
+    location.reload();
   });
 
 });
