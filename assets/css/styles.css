@@ -373,15 +373,12 @@ BODY - GLOBAL BODY SECTION
 	margin-bottom: 25px;
 	line-height: 1.5;
 	text-align: justify;
-	font-size: 18px;
+	font-size: 17px;
 	cursor: default;
 	user-select: none;
 }
 
-.paragraph-context span {
-	color: var(--orange);
-}
-
+.paragraph-context span,
 .paragraph-context a {
 	color: var(--orange);
 	text-decoration: none;
@@ -539,7 +536,7 @@ MEDIA QUERIES
 	.paragraph-context a {
 		margin-bottom: 25px;
 		line-height: 1.5;
-		font-size: calc(18px - 0.1vw);
+		font-size: calc(17px - 0.1vw);
 	}
 
 	.Storyline-B figure figcaption {
@@ -680,7 +677,7 @@ MEDIA QUERIES
 	.paragraph-context span,
 	.paragraph-context a {
 		margin-bottom: 10px;
-		font-size: calc(18px - 2vw);
+		font-size: calc(17px - 2vw);
 		line-height: 2.3;
 	}
 	.Storyline-B figure {
