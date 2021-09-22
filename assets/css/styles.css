@@ -382,6 +382,11 @@ BODY - GLOBAL BODY SECTION
 	color: var(--orange);
 }
 
+.paragraph-context a {
+	color: var(--orange);
+	text-decoration: none;
+}
+
 /*----------------------------------
 BODY - WORK SECTION
 ------------------------------------*/
@@ -530,7 +535,8 @@ MEDIA QUERIES
 		height: calc(400px - 7vw);
 	}
 	.paragraph-context,
-	.paragraph-context span {
+	.paragraph-context span,
+	.paragraph-context a {
 		margin-bottom: 25px;
 		line-height: 1.5;
 		font-size: calc(18px - 0.1vw);
@@ -671,7 +677,8 @@ MEDIA QUERIES
 		height: calc(400px - 50vw);
 	}
 	.paragraph-context,
-	.paragraph-context span {
+	.paragraph-context span,
+	.paragraph-context a {
 		margin-bottom: 10px;
 		font-size: calc(18px - 2vw);
 		line-height: 2.3;
