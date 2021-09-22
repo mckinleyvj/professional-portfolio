@@ -187,11 +187,12 @@ HEADER SECTION
 
 .time-now {
 	position: fixed;
-	top: 55px;
-	text-align: center;
+	top: 18px;
+	text-align: right;
 	color: var(--orange);
 	font-size: 16px;
 	width: 100%;
+	padding-right: 25px;
 }
 
 /*----------------------------------
@@ -423,6 +424,7 @@ BODY - WORK SECTION
 	flex-direction: column;
 	padding: 15px;
 	width: 33.33%;
+	/* font-size: 250px; */
 }
 
 .work-content-container img {
@@ -439,6 +441,14 @@ BODY - WORK SECTION
 	-moz-box-shadow: 0 0 10px var(--shadow);
 	-webkit-box-shadow: 0 0 10px var(--shadow);
 	box-shadow: 0 0 10px var(--shadow);
+}
+
+.fig-desc {
+	position: relative;
+	text-align: center;
+	width: 90%;
+	align-self: center;
+	font-size: 14px;
 }
 
 /*----------------------------------
@@ -585,6 +595,12 @@ MEDIA QUERIES
 	.work-content-container figure {
 		width: 50%;
 	}
+	.time-now {
+		top: 55px;
+		text-align: center;
+		width: 100vw;
+		padding: 0px;
+	}
 }
 
 /*--------Media of 425px ----------*/
@@ -711,12 +727,7 @@ MEDIA QUERIES
 	}
 
 	.time-now {
-		position: fixed;
 		top: 40px;
-		text-align: center;
-		color: var(--orange);
-		font-size: 16px;
-		width: 100vw;
 	}
 }
 
