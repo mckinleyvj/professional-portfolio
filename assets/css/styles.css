@@ -429,6 +429,12 @@ BODY - WORK SECTION
 	/* font-size: 250px; */
 }
 
+.work-content-container a {
+	height: 200px;
+	width: 100%;
+	text-align: center;
+}
+
 .work-content-container img {
 	height: 200px;
 	opacity: 0.3;
