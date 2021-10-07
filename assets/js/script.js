@@ -4,20 +4,61 @@ var $username = $('#usernameTxt');
 var $email = $('#emailTxt');
 var $message = $('#commentTxt');
 
+var $workContent = $('#work-content-container');
+
 $timeDisplayEl.attr("class", "time-now");
 
 function displayTime() {
     var rightNow = moment().format('hh:mm:ss a');
     $timeDisplayEl.text(rightNow);
+}setInterval(displayTime, 1000);
+
+function getGitHubRepos() {
+  var githubREPO = "https://api.github.com/users/mckinleyvj/repos";
+
+
+  $.ajax({
+    url: githubREPO,
+    method: "GET",
+    dataType: "json",
+
+    beforeSend: function () {
+      //reserve
+    },
+    complete: function () {
+      //reserve
+    },
+    success: function (res) {
+      console.log(res);
+      var githubRepoList = res;
+      var displayList = "";
+    
+        for (var i = 0; i < githubRepoList.length; i++) {
+          console.log(githubRepoList[i]);
+          displayList = `
+          <figure>
+          <figcaption id="#fig-glow">${githubRepoList[i].name}</figcaption>
+          <a href="${githubRepoList[i].html_url}"><img src="./assets/images/${githubRepoList[i].name}.png" alt="${githubRepoList[i].name}"></a>
+          <span class="fig-desc">${githubRepoList[i].language}</span>
+          </figure>
+          `;    
+
+      $workContent.append(displayList);
+
+      }
+    },
+    error: function (err) {
+      console.log("Error\n" + err.message);
+     
+    },
+  });
 }
 
-setInterval(displayTime, 1000);
-
-function printWorkContentDesc() {
-  console.log('print the desc');
+function initiate() {
+  getGitHubRepos();
 }
 
-printWorkContentDesc();
+initiate();
 
 $(document).ready(function () {
 
