@@ -36,7 +36,7 @@ function getGitHubRepos() {
         for (var i = 0; i < githubRepoList.length; i++) {
           displayList = `
           <figure>
-          <figcaption id="#fig-glow">${githubRepoList[i].name}</figcaption>
+          <figcaption id="#fig-glow">Repository: ${githubRepoList[i].name}</figcaption>
           <a href="${githubRepoList[i].html_url}"><img src="./assets/images/${githubRepoList[i].name}.png" alt="${githubRepoList[i].name}"></a>
           <span class="fig-desc">Description: ${githubRepoList[i].description}</span>
           <span class="fig-desc">Language: ${githubRepoList[i].language}</span>
