@@ -453,10 +453,11 @@ BODY - WORK SECTION
 
 .fig-desc {
 	position: relative;
-	text-align: center;
+	text-align: left;
 	width: 100%;
 	align-self: center;
 	font-size: 14px;
+	padding: 5px 0;
 }
 
 /*----------------------------------

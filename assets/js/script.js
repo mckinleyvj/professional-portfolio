@@ -17,7 +17,6 @@ function getGitHubRepos() {
   var githubREPO = "https://api.github.com/users/mckinleyvj/repos?sort=created&per_page=6";
   //per_page=
 
-
   $.ajax({
     url: githubREPO,
     method: "GET",
@@ -35,11 +34,12 @@ function getGitHubRepos() {
       var displayList = "";
     
         for (var i = 0; i < githubRepoList.length; i++) {
-          console.log(githubRepoList[i]);
           displayList = `
           <figure>
           <figcaption id="#fig-glow">${githubRepoList[i].name}</figcaption>
           <a href="${githubRepoList[i].html_url}"><img src="./assets/images/${githubRepoList[i].name}.png" alt="${githubRepoList[i].name}"></a>
+          <span class="fig-desc">Live URL: <a href="https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}" class="fig-desc" target="_blank">Here</a></span>
+          <span class="fig-desc">Description: ${githubRepoList[i].description}</span>
           <span class="fig-desc">Language: ${githubRepoList[i].language}</span>
           <span class="fig-desc">Last update: ${githubRepoList[i].updated_at}</span>
           </figure>
