@@ -406,7 +406,7 @@ BODY - WORK SECTION
 }
 
 .work-content-container figcaption {
-	color: var(--dirtywhite);
+	color: var(--orange);
 	text-align: center;
 	position: relative;
 	z-index: 50;
@@ -454,7 +454,7 @@ BODY - WORK SECTION
 .fig-desc {
 	position: relative;
 	text-align: center;
-	width: 90%;
+	width: 100%;
 	align-self: center;
 	font-size: 14px;
 }

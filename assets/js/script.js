@@ -14,7 +14,8 @@ function displayTime() {
 }setInterval(displayTime, 1000);
 
 function getGitHubRepos() {
-  var githubREPO = "https://api.github.com/users/mckinleyvj/repos";
+  var githubREPO = "https://api.github.com/users/mckinleyvj/repos?sort=created&per_page=6";
+  //per_page=
 
 
   $.ajax({
@@ -39,7 +40,8 @@ function getGitHubRepos() {
           <figure>
           <figcaption id="#fig-glow">${githubRepoList[i].name}</figcaption>
           <a href="${githubRepoList[i].html_url}"><img src="./assets/images/${githubRepoList[i].name}.png" alt="${githubRepoList[i].name}"></a>
-          <span class="fig-desc">${githubRepoList[i].language}</span>
+          <span class="fig-desc">Language: ${githubRepoList[i].language}</span>
+          <span class="fig-desc">Last update: ${githubRepoList[i].updated_at}</span>
           </figure>
           `;    
 
