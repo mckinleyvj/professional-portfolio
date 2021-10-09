@@ -403,6 +403,7 @@ BODY - WORK SECTION
 	text-align: left;
 	border-bottom: 1px solid var(--dirtywhite);
 	text-shadow: 3px 3px var(--alittle_black);
+	margin: 0 15px;
 }
 
 .work-content-container figcaption {
@@ -740,6 +741,9 @@ MEDIA QUERIES
 
 	.time-now {
 		top: 40px;
+	}
+	.contact-content-inner {
+		justify-content: center;
 	}
 }
 
