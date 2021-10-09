@@ -317,7 +317,7 @@ BODY - GLOBAL BODY SECTION
 	flex: 1 0 auto;
 	min-width: 100%;
 	min-height: 99.7vh;
-	padding: 48px 50px 50px 50px;
+	padding: 50px 50px 50px 50px;
 	color: var(--dirtywhite);
 	align-content: center;
 }
@@ -401,12 +401,13 @@ BODY - WORK SECTION
 .work-content-inner h2 {
 	font-size: 30px;
 	text-align: left;
-	/* border-bottom: 1px solid var(--dirtywhite); */
+	border-bottom: 1px solid var(--dirtywhite);
 	text-shadow: 3px 3px var(--alittle_black);
+	margin: 0 15px;
 }
 
 .work-content-container figcaption {
-	color: var(--dirtywhite);
+	color: var(--orange);
 	text-align: center;
 	position: relative;
 	z-index: 50;
@@ -453,10 +454,11 @@ BODY - WORK SECTION
 
 .fig-desc {
 	position: relative;
-	text-align: center;
-	width: 90%;
+	text-align: left;
+	width: 100%;
 	align-self: center;
 	font-size: 14px;
+	padding: 5px 0;
 }
 
 /*----------------------------------
@@ -699,7 +701,7 @@ MEDIA QUERIES
 		height: calc(100px - 8vw);
 	}
 	.work-content-inner h2 {
-		font-size: calc(18px - 0.4vw);
+		font-size: calc(18px - 0.8vw);
 		padding-top: 10px;
 		text-align: center;
 	}
@@ -739,6 +741,9 @@ MEDIA QUERIES
 
 	.time-now {
 		top: 40px;
+	}
+	.contact-content-inner {
+		justify-content: center;
 	}
 }
 
