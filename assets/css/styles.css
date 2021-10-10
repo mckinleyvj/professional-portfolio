@@ -263,7 +263,7 @@ BODY - HOME SECTION
 }
 
 .home-content-1 .greet {
-	font-size: 20px;
+	font-size: 25px;
 	padding-bottom: 25px;
 	font-weight: 900;
 	letter-spacing: 5px;
@@ -289,6 +289,7 @@ BODY - HOME SECTION
 
 .next {
 	padding: 25px;
+	margin-bottom: 30px;
 }
 
 .next a {
@@ -325,7 +326,17 @@ BODY - HOME SECTION
 	transform: rotate(0deg);
 }
 
-._card_container_home,
+._card_container_home {
+	display: flex;
+	flex: 1 0 auto;
+	flex-wrap: wrap;
+	flex-direction: column;
+	/* justify-content: flex-start; */
+	align-items: flex-start;
+	width: 100%;
+	/* min-height: 94.7vh; */
+}
+
 ._card_container_inner_home {
 	display: flex;
 	flex: 1 0 auto;
@@ -334,7 +345,93 @@ BODY - HOME SECTION
 	justify-content: flex-start;
 	align-items: flex-start;
 	width: 100%;
-	min-height: 94.7vh;
+	/* min-height: 94.7vh; */
+}
+
+.home-content-3 {
+	display: flex;
+	min-height: 51vh;
+	margin-left: 150px;
+}
+
+.timeline {
+	width: 800px;
+	height: 20px;
+	list-style: none;
+	text-align: justify;
+	margin: 50px;
+	background: -webkit-gradient(
+		left top,
+		left bottom,
+		color-stop(0%, rgba(255, 255, 255, 0)),
+		color-stop(45%, rgba(255, 255, 255, 0)),
+		color-stop(51%, rgba(191, 128, 11, 1)),
+		color-stop(57%, rgba(255, 255, 255, 0)),
+		color-stop(100%, rgba(255, 255, 255, 0))
+	);
+	background: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 0) 45%,
+		rgba(191, 128, 11, 1) 51%,
+		rgba(255, 255, 255, 0) 57%,
+		rgba(255, 255, 255, 0) 100%
+	);
+}
+
+.timeline:after {
+	display: inline-block;
+	content: "";
+	width: 100%;
+}
+
+.timeline li {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: #f2bb13;
+	text-align: center;
+	line-height: 1.2;
+	position: relative;
+	border-radius: 50%;
+}
+.timeline li:before {
+	display: inline-block;
+	content: attr(data-year);
+	font-size: 26px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	color: var(--orange);
+}
+
+.timeline li:nth-child(odd):before {
+	top: -40px;
+}
+.timeline li:nth-child(even):before {
+	bottom: -40px;
+}
+
+.timeline li:after {
+	display: inline-block;
+	content: attr(data-text);
+	font-size: 18px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.timeline li:nth-child(odd):after {
+	bottom: 0;
+	margin-bottom: -10px;
+	transform: translate(-50%, 100%);
+	font-weight: 300;
+}
+.timeline li:nth-child(even):after {
+	top: 0;
+	margin-top: -10px;
+	transform: translate(-50%, -100%);
+	font-weight: 300;
 }
 
 /*----------------------------------
@@ -346,7 +443,7 @@ BODY - GLOBAL BODY SECTION
 	flex: 1 0 auto;
 	min-width: 100%;
 	min-height: 99.7vh;
-	padding: 50px 50px 50px 50px;
+	padding: 50px 50px 50px 25px;
 	color: var(--dirtywhite);
 	/* align-content: flex-start; */
 }
@@ -362,39 +459,46 @@ BODY - GLOBAL BODY SECTION
 }
 
 .Storyline-A {
-	padding: 25px 200px 0px 15px;
+	padding: 25px 330px 0px 15px;
 }
 
 .Storyline-B {
-	flex: 1 0 30%;
+	flex: 1;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
+	/* flex-direction: row; */
+	/* flex-wrap: wrap; */
+	/* justify-content: center; */
+	/* align-content: center; */
+	align-items: flex-end;
 }
 
 .Storyline-B figure {
-	flex: 1 0 auto;
+	/* flex: 1 0 auto; */
 	padding: 0 30px;
 	text-align-last: center;
+	margin-bottom: 50px;
 }
 
 .Storyline-B figure figcaption {
 	font-size: 16px;
 	text-align: center;
-	margin: 20px 0;
+	margin: 10px 0 0px 0;
+	background-color: var(--gradient_black);
+	color: var(--dirtywhite);
+	padding: 5px;
+	border-radius: 15px;
+	opacity: 1;
 }
 .Storyline-B figure img {
-	height: 100px;
+	height: 85px;
 	align-self: center;
-	border-radius: 15px;
-	transform: rotate(9deg);
+	border-radius: 50px;
+	transform: rotate(355deg);
+	width: 85px;
 }
 
 .Storyline-B figure img:hover {
-	box-shadow: 0 0 10px var(--shadow);
+	box-shadow: 0 0 10px var(--orange);
 }
 
 .paragraph-context,
@@ -402,7 +506,7 @@ BODY - GLOBAL BODY SECTION
 	margin-bottom: 25px;
 	line-height: 1.5;
 	text-align: justify;
-	font-size: 17px;
+	font-size: 18px;
 	cursor: default;
 	user-select: none;
 }
