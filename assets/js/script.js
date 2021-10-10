@@ -38,10 +38,13 @@ function getGitHubRepos() {
           <figure>
           <figcaption id="#fig-glow">Repository: ${githubRepoList[i].name}</figcaption>
           <a href="${githubRepoList[i].html_url}"><img src="./assets/images/${githubRepoList[i].name}.png" alt="${githubRepoList[i].name}"></a>
-          <span class="fig-desc">Description: ${githubRepoList[i].description}</span>
+          <div class="fig-table">
+          <span class="fig-desc">Description:<br>
+          ${githubRepoList[i].description}</span>
           <span class="fig-desc">Language: ${githubRepoList[i].language}</span>
           <span class="fig-desc">Last update: ${githubRepoList[i].updated_at}</span>
-          <span class="fig-desc">Live URL: <a href="https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}" class="fig-desc" target="_blank">Here</a></span>
+          <span class="fig-desc"><a href="https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}" class="fig-desc" target="_blank">https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}</a></span>
+          </div>
           </figure>
           `;    
 
