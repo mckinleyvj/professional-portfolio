@@ -18,8 +18,8 @@ GLOBAL SELECTOR
 	/*font-family: monospace, "Caveat", verdana, sans-serif;*/
 	font-family: "Red Hat Display", sans-serif;
 	font-size: 18px;
-	color: var(--dirtywhite);
-	font-weight: 300;
+	color: var(--super_black);
+	font-weight: 500;
 }
 
 h1,
@@ -223,6 +223,13 @@ BODY - HOME SECTION
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: left;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vw;
+	width: 100vw;
+	z-index: -100;
+	opacity: 0.7;
 }
 
 ._body_container_inner {
@@ -532,13 +539,14 @@ button {
 FOOTER
 ------------------------------------*/
 footer {
-	text-align: center;
+	text-align: right;
 	position: fixed;
-	bottom: 0px;
+	bottom: 5px;
 	font-size: small;
 	width: 100%;
 	z-index: -100;
 	color: var(--dirtywhite);
+	right: 5px;
 }
 
 /*END OF CODE*/
