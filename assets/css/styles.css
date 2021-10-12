@@ -231,11 +231,11 @@ BODY - HOME SECTION
 	height: 100vw;
 	width: 100vw;
 	z-index: -100;
-	opacity: 0.7;
+	opacity: 0.3;
 }
 
 ._body_container_inner {
-	width: 80vw;
+	width: 100vw;
 	/* margin: 0 auto; */
 	display: flex;
 	flex-direction: column;
@@ -265,12 +265,12 @@ BODY - HOME SECTION
 .home-content-1 .greet {
 	font-size: 25px;
 	padding-bottom: 25px;
-	font-weight: 900;
+	font-weight: 500;
 	letter-spacing: 5px;
 }
 
 .home-content-1 strong {
-	font-size: 25px;
+	font-size: calc(25px - 5px);
 	font-weight: 500;
 	color: var(--orange);
 	padding-bottom: 25px;
@@ -289,13 +289,13 @@ BODY - HOME SECTION
 
 .next {
 	padding: 25px;
-	margin-bottom: 30px;
+	margin-bottom: 65px;
 }
 
 .next a {
 	text-decoration: none;
 	/* font-size: 18px; */
-	color: var(--dirtywhite);
+	color: var(--super_black);
 	/* text-decoration: underline; */
 	text-underline-offset: 5px;
 }
@@ -331,10 +331,11 @@ BODY - HOME SECTION
 	flex: 1 0 auto;
 	flex-wrap: wrap;
 	flex-direction: column;
-	/* justify-content: flex-start; */
-	align-items: flex-start;
+	justify-content: flex-start;
+	align-items: center;
 	width: 100%;
 	/* min-height: 94.7vh; */
+	margin-top: 5%;
 }
 
 ._card_container_inner_home {
@@ -342,7 +343,7 @@ BODY - HOME SECTION
 	flex: 1 0 auto;
 	flex-wrap: nowrap;
 	flex-direction: row;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: flex-start;
 	width: 100%;
 	/* min-height: 94.7vh; */
@@ -356,7 +357,7 @@ BODY - HOME SECTION
 
 .timeline {
 	width: 800px;
-	height: 20px;
+	height: 15px;
 	list-style: none;
 	text-align: justify;
 	margin: 50px;
@@ -388,18 +389,19 @@ BODY - HOME SECTION
 
 .timeline li {
 	display: inline-block;
-	width: 20px;
-	height: 20px;
-	background: #f2bb13;
+	width: 15px;
+	height: 15px;
+	background: var(--gradient_black);
 	text-align: center;
-	line-height: 1.2;
+	line-height: 1.1;
 	position: relative;
 	border-radius: 50%;
+	/* font-size: 10px; */
 }
 .timeline li:before {
 	display: inline-block;
 	content: attr(data-year);
-	font-size: 26px;
+	font-size: 20px;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
@@ -433,6 +435,7 @@ BODY - HOME SECTION
 	margin-top: -10px;
 	transform: translate(-50%, -100%);
 	font-weight: 500;
+	background-color: va;
 }
 
 /*----------------------------------
@@ -460,7 +463,10 @@ BODY - GLOBAL BODY SECTION
 }
 
 .Storyline-A {
-	padding: 25px 330px 0px 15px;
+	/* padding: 25px 330px 0px 15px; */
+	width: 75vw;
+	margin-top: 25px;
+	padding-right: 330px;
 }
 
 .Storyline-B {
@@ -477,7 +483,7 @@ BODY - GLOBAL BODY SECTION
 	/* flex: 1 0 auto; */
 	padding: 0 30px;
 	text-align-last: center;
-	margin-bottom: 50px;
+	margin-bottom: 80px;
 }
 
 .Storyline-B figure figcaption {
@@ -486,14 +492,14 @@ BODY - GLOBAL BODY SECTION
 	margin: 10px 0 0px 0;
 	background-color: var(--gradient_black);
 	color: var(--dirtywhite);
-	padding: 5px;
+	padding: 10px;
 	border-radius: 15px;
 	opacity: 1;
 }
 .Storyline-B figure img {
 	height: 85px;
 	align-self: center;
-	border-radius: 50px;
+	border-radius: 15px;
 	transform: rotate(355deg);
 	width: 85px;
 }
@@ -510,6 +516,7 @@ BODY - GLOBAL BODY SECTION
 	font-size: 18px;
 	cursor: default;
 	user-select: none;
+	color: var(--super_black);
 }
 
 .paragraph-context span,
@@ -530,13 +537,14 @@ BODY - WORK SECTION
 	align-content: center;
 	align-items: center;
 	flex-wrap: wrap;
+	margin-top: 20px;
 }
 
 .work-content-inner h2 {
-	font-size: 30px;
+	font-size: 25px;
 	text-align: left;
-	border-bottom: 1px solid var(--dirtywhite);
-	text-shadow: 1px 1px var(--orange);
+	border-bottom: 1px solid var(--orange);
+	/* text-shadow: 1px 1px var(--orange); */
 	margin: 0 15px;
 }
 
@@ -547,22 +555,28 @@ BODY - WORK SECTION
 	z-index: 50;
 	font-weight: normal;
 	margin-bottom: 5px;
+	margin-left: 10px;
+	background-color: rgb(0 0 0 / 70%);
+	padding: 10px;
+	border-radius: 10px;
+	margin-right: auto;
 }
 
 .work-content-container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-start;
 	flex: 1 100%;
 	/* display: list-item; */
 	flex-direction: row;
+	margin: 15px 0;
 }
 
 .work-content-container figure {
 	display: flex;
 	flex-direction: column;
 	padding: 15px;
-	width: 33.33%;
+	width: 25%;
 	/* font-size: 250px; */
 }
 
@@ -575,7 +589,7 @@ BODY - WORK SECTION
 .work-content-container img {
 	height: 200px;
 	border-radius: 15px;
-	border: 1px solid var(--dirtywhite);
+	border: 1px solid var(--orange);
 	padding: 5px;
 	width: 100%;
 }
