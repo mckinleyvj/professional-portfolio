@@ -8,21 +8,23 @@
 
 ## Jobs done:
 
-- 27/08/21 // Created the website from scratch using flexbox and knowledge from Week 01 and Week 02.
-- 28/08/21 // Updated the design and finalize the home page for initial commit to GitHub.
-- 29/08/21 // Updated the design of home page, modified website responsiveness for mobile devices.
-- 31/08/21 // Fixed Page responsiveness for mobile devices. Added about.html and set links.
-- 02/09/21 // Added description, links and images to webpage. Finalize design.
-- 02/09/21  - Create backup copy for multiple pages & CSS file.
-            - Revert Design back to single page with Sections.
-            - Update Links & CSS codes.
-            - Update Media Query codes.
-            - Double check codes & to remove redundant codes.
-            - Final testing and removal of other pages by moving into dump folder.
-            - Commit to GitHub with latest update & Update Readme.MD
-- 13/10/21  - Added GitHub Server-API to pull out last 6 repositories.
-            - Changed layout of webpage and color schemes.
-            - 
+- 27/08/21 *Created the website from scratch using flexbox and knowledge from Week 01 and Week 02.
+- 28/08/21 *Updated the design and finalize the home page for initial commit to GitHub.
+- 29/08/21 *Updated the design of home page, modified website responsiveness for mobile devices.
+- 31/08/21 *Fixed Page responsiveness for mobile devices. Added about.html and set links.
+- 02/09/21 *Added description, links and images to webpage. Finalize design.
+- 02/09/21 *Create backup copy for multiple pages & CSS file.
+           *Revert Design back to single page with Sections.
+           *Update Links & CSS codes.
+           *Update Media Query codes.
+           *Double check codes & to remove redundant codes.
+           *Final testing and removal of other pages by moving into dump folder.
+           *Commit to GitHub with latest update & Update Readme.MD
+- 13/10/21 *Added GitHub Server-API to pull out last 6 repositories.
+           *Changed layout of webpage and color schemes.
+           *Modified media queries due to new page layout.
+           *Added link to download resume.
+           
 ## Screenshots:
 
 ![image](https://user-images.githubusercontent.com/87624839/137150644-95932de6-7343-410c-8113-48853f1571e3.png)
@@ -31,7 +33,7 @@ Main Page
 ![image](https://user-images.githubusercontent.com/87624839/137150826-f81ddc4c-b13d-4107-a2d1-e3286c600c25.png)
 About Me Section
 
-<Reserved>
+(Reserved)
 Career Achievements Section
 
 ![image](https://user-images.githubusercontent.com/87624839/137150942-b153d6dd-e13c-4ccc-ab63-207e25ba15c7.png)
