@@ -25,22 +25,22 @@
             - 
 ## Screenshots:
 
-![image](https://user-images.githubusercontent.com/87624839/131791198-fbb46ed7-0106-4d2b-b114-70c228eb7d65.png)
-Home Page
+![image](https://user-images.githubusercontent.com/87624839/137150644-95932de6-7343-410c-8113-48853f1571e3.png)
+Main Page
 
-![image](https://user-images.githubusercontent.com/87624839/131791224-117a6375-0568-481c-85cf-31e565ddc2db.png)
-About Me Page
+![image](https://user-images.githubusercontent.com/87624839/137150826-f81ddc4c-b13d-4107-a2d1-e3286c600c25.png)
+About Me Section
 
-![image](https://user-images.githubusercontent.com/87624839/131791248-d5daee56-d332-4cc7-b376-97a0da92d57f.png)
-Work Page
+<Reserved>
+Career Achievements Section
 
-![image](https://user-images.githubusercontent.com/87624839/131791264-0a68386a-040b-470a-baf8-35a82f01e291.png)
-Contact Me Page
+![image](https://user-images.githubusercontent.com/87624839/137150942-b153d6dd-e13c-4ccc-ab63-207e25ba15c7.png)
+Contact Me Section
 
-![image](https://user-images.githubusercontent.com/87624839/131791285-375ed74e-be27-4784-84ef-4bf9986fc935.png)
+![image](https://user-images.githubusercontent.com/87624839/137151118-a8dcf393-1364-4845-9094-2f835848a3fd.png)
 Page Responsiveness - Mobile Device
 
-![image](https://user-images.githubusercontent.com/87624839/131791308-85646380-3125-4714-a3e1-5a9b92630287.png)
+![image](https://user-images.githubusercontent.com/87624839/137151239-286dc36a-1216-4380-8bf7-0ed7ff3e9a36.png)
 Page Responsiveness - Tablet
 
 ## Related Links:
