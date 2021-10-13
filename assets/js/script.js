@@ -13,6 +13,28 @@ function displayTime() {
     $timeDisplayEl.text(rightNow);
 }setInterval(displayTime, 1000);
 
+function getContributors(contriLink) {
+  $.ajax({
+    url: contriLink,
+    method: "GET",
+    dataType: "json",
+
+    beforeSend: function () {
+      //reserve
+    },
+    complete: function () {
+      //reserve
+    },
+    success: function (res) {
+      //console.log(res);
+      return res;
+    },
+  error: function (err) {
+    console.log("Error\n" + err.message);
+  },
+});
+}
+
 function getGitHubRepos() {
   var githubREPO = "https://api.github.com/users/mckinleyvj/repos?sort=created&per_page=6";
   //per_page=
@@ -34,14 +56,23 @@ function getGitHubRepos() {
       var displayList = "";
     
         for (var i = 0; i < githubRepoList.length; i++) {
+
+          contriLink = "https://api.github.com/repos/mckinleyvj/" + githubRepoList[i].name + "/contributors";
+          const arr_contributors = getContributors(contriLink);
+          console.log(arr_contributors);
           displayList = `
           <figure>
           <figcaption id="#fig-glow">Repository: ${githubRepoList[i].name}</figcaption>
           <a href="${githubRepoList[i].html_url}"><img src="./assets/images/${githubRepoList[i].name}.png" alt="${githubRepoList[i].name}"></a>
-          <span class="fig-desc">Description: ${githubRepoList[i].description}</span>
+          <div class="flex-fig-table">
+          <div class="fig-table">
+          <span class="fig-desc">Description:<br>
+          ${githubRepoList[i].description}</span>
           <span class="fig-desc">Language: ${githubRepoList[i].language}</span>
           <span class="fig-desc">Last update: ${githubRepoList[i].updated_at}</span>
-          <span class="fig-desc">Live URL: <a href="https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}" class="fig-desc" target="_blank">Here</a></span>
+          <span class="fig-desc"><a href="https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}" class="fig-desc" target="_blank">https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}</a></span>
+          </div>
+          </div>
           </figure>
           `;    
 
@@ -50,8 +81,8 @@ function getGitHubRepos() {
       }
     },
     error: function (err) {
-      console.log("Error\n" + err.message);
-     
+      console.error("Error\n" + err.message);
+      $workContent.attr('style','color: red').append("Error. Could not display repositories at this time.");
     },
   });
 }
