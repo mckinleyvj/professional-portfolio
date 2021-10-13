@@ -663,7 +663,7 @@ MEDIA QUERIES
 		font-size: calc(30px - 0.5vw);
 	}
 	.home-content-1 .greet-desc {
-		font-size: calc(18px - 0.2vw);
+		font-size: calc(17px - 0.3vw);
 	}
 	.next a {
 		font-size: calc(17px - 0.3vw);
@@ -675,13 +675,13 @@ MEDIA QUERIES
 		width: 600px;
 	}
 	.timeline li:before {
-		font-size: 15px;
+		font-size: calc(17px - 0.3vw);
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
 	.timeline li:after {
-		font-size: 15px;
+		font-size: calc(17px - 0.3vw);
 	}
 	.home-content-2 img {
 		height: calc(400px - 7vw);
@@ -695,7 +695,7 @@ MEDIA QUERIES
 	}
 
 	.Storyline-B figure figcaption {
-		font-size: calc(16px - 0.1vw);
+		font-size: calc(17px - 0.3vw);
 		margin: 20px 0;
 	}
 	.Storyline-B figure img {
@@ -707,7 +707,7 @@ MEDIA QUERIES
 		padding: 0 5px;
 	}
 	.work-content-inner h2 {
-		font-size: calc(22px - 0.3vw);
+		font-size: calc(20px - 0.3vw);
 	}
 	.work-content-container {
 		margin: 0;
@@ -737,6 +737,9 @@ MEDIA QUERIES
 	form h3 {
 		font-size: 100%;
 		color: var(--orange);
+	}
+	.work-content-footer span {
+		font-size: calc(17px - 0.3vw);
 	}
 }
 /*--------Media of 1280px x 960px----------*/
