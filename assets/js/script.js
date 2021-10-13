@@ -14,25 +14,7 @@ function displayTime() {
 }setInterval(displayTime, 1000);
 
 function getContributors(contriLink) {
-  $.ajax({
-    url: contriLink,
-    method: "GET",
-    dataType: "json",
-
-    beforeSend: function () {
-      //reserve
-    },
-    complete: function () {
-      //reserve
-    },
-    success: function (res) {
-      //console.log(res);
-      return res;
-    },
-  error: function (err) {
-    console.log("Error\n" + err.message);
-  },
-});
+ 
 }
 
 function getGitHubRepos() {
@@ -51,15 +33,12 @@ function getGitHubRepos() {
       //reserve
     },
     success: function (res) {
-      console.log(res);
       var githubRepoList = res;
       var displayList = "";
     
         for (var i = 0; i < githubRepoList.length; i++) {
-
-          contriLink = "https://api.github.com/repos/mckinleyvj/" + githubRepoList[i].name + "/contributors";
-          const arr_contributors = getContributors(contriLink);
-          console.log(arr_contributors);
+          var date_updtd = moment.parseZone(githubRepoList[i].updated_at,"YYYY-MM-DDTHH:mm:ss[Z]").format("dddd, DD-MM-YYYY, HH:mm:ss");
+          
           displayList = `
           <figure>
           <figcaption id="#fig-glow">Repository: ${githubRepoList[i].name}</figcaption>
@@ -69,15 +48,30 @@ function getGitHubRepos() {
           <span class="fig-desc">Description:<br>
           ${githubRepoList[i].description}</span>
           <span class="fig-desc">Language: ${githubRepoList[i].language}</span>
-          <span class="fig-desc">Last update: ${githubRepoList[i].updated_at}</span>
+          <span class="fig-desc">Last update: ${date_updtd}</span>
           <span class="fig-desc">Live URL: <a href="https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}" class="fig-desc" target="_blank">https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}</a></span>
           </div>
           </div>
           </figure>
-          `;    
+          `;
 
-      $workContent.append(displayList);
+          $workContent.append(displayList);  
 
+          // var contriLink = "https://api.github.com/repos/mckinleyvj/" + githubRepoList[i].name + "/contributors";
+          // $.ajax({
+          //   url: contriLink,
+          //   method: "GET",
+          //   dataType: "json",
+        
+          //   success: function (contributors) {
+          //     for (var i = 0; i < contributors.length; i++) {
+          //       return `<span class="fig-desc">${contributors[i].login}</span>`;
+          //     }
+          //   },
+          //   error: function (err) {
+          //     console.log("Error\n" + err.message);
+          //   },
+          // });
       }
     },
     error: function (err) {
