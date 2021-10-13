@@ -33,7 +33,7 @@ Main Page
 ![image](https://user-images.githubusercontent.com/87624839/137150826-f81ddc4c-b13d-4107-a2d1-e3286c600c25.png)
 About Me Section
 
-(Reserved)
+![image](https://user-images.githubusercontent.com/87624839/137157416-0d6f69f4-f018-443c-8ed2-ec97d8ed24b0.png)
 Career Achievements Section
 
 ![image](https://user-images.githubusercontent.com/87624839/137150942-b153d6dd-e13c-4ccc-ab63-207e25ba15c7.png)
