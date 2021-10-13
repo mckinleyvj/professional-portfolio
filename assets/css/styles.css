@@ -430,7 +430,7 @@ BODY - GLOBAL BODY SECTION
 	flex-wrap: nowrap;
 	flex-direction: column;
 	z-index: 1;
-	align-items: flex-start;
+	align-items: center;
 	align-self: center;
 }
 
