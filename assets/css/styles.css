@@ -210,7 +210,7 @@ BODY - HOME SECTION
 	background-image: url("https://images.unsplash.com/photo-1633432695903-9ef31eec6a05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: left;
+	background-position: center;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -657,11 +657,7 @@ footer {
 /*------------------------------------
 MEDIA QUERIES
 ------------------------------------*/
-
-/*--------Media of 1280px x 960px----------*/
-/*----On screens that are 1280px or less---*/
-/*-----------------HD Screens--------------*/
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1600px) {
 	.home-content-1 strong,
 	.home-content-1 .greet {
 		font-size: calc(30px - 0.5vw);
@@ -673,7 +669,7 @@ MEDIA QUERIES
 		font-size: calc(17px - 0.3vw);
 	}
 	.home-content-3 {
-		margin-left: 200px;
+		margin-left: 100px;
 	}
 	.timeline {
 		width: 600px;
@@ -710,7 +706,6 @@ MEDIA QUERIES
 	.Storyline-B figure {
 		padding: 0 5px;
 	}
-
 	.work-content-inner h2 {
 		font-size: calc(22px - 0.3vw);
 	}
@@ -745,5 +740,89 @@ MEDIA QUERIES
 		color: var(--orange);
 	}
 }
+/*--------Media of 1280px x 960px----------*/
+/*----On screens that are 1280px or less---*/
+/*-----------------HD Screens--------------*/
+@media screen and (max-width: 1280px) {
+	.home-content-3 {
+		margin-left: 25px;
+	}
+	.timeline {
+		width: 500px;
+	}
+	.timeline li:before {
+		font-size: 13px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 
+	.timeline li:after {
+		font-size: 13px;
+	}
+}
+/*--------Media of 1024px x 768px----------*/
+/*----------------Old Laptops--------------*/
+@media screen and (max-width: 1024px) {
+	.home-content-2 img {
+		height: calc(300px - 7vw);
+	}
+	.home-content-1 strong,
+	.home-content-1 .greet {
+		font-size: calc(25px - 0.8vw);
+	}
+	.home-content-1 .greet-desc {
+		font-size: calc(15px - 0.2vw);
+	}
+	._card_container_inner_home {
+		flex-direction: row;
+		justify-content: center;
+	}
+	._card_container_home {
+		align-items: center;
+	}
+	.card-content-inner {
+		align-items: center;
+	}
+	.card-content {
+		padding: 60px 25px 25px 25px;
+	}
+	.next a {
+		font-size: calc(15px - 0.3vw);
+	}
+	.paragraph-context,
+	.paragraph-context span,
+	.paragraph-context a {
+		margin-bottom: 15px;
+		line-height: 1.2;
+		font-size: calc(15px - 0.3vw);
+	}
+	.Storyline-B figure figcaption {
+		font-size: calc(13px - 0.1vw);
+		margin: 10px 0;
+		padding: 5px;
+	}
+	.Storyline-B figure img {
+		height: 45px;
+		width: 45px;
+	}
+
+	.Storyline-B figure {
+		padding: 0 5px;
+	}
+	.work-content-inner h2 {
+		font-size: calc(17px - 0.3vw);
+	}
+	.work-content-container {
+		margin: 0;
+	}
+	.work-content-container figcaption {
+		font-size: calc(14px - 0.3vw);
+	}
+	.work-content-container figure {
+		width: 50%;
+	}
+	.fig-desc {
+		font-size: calc(14px - 0.3vw);
+	}
+}
 /*END OF CODE*/
