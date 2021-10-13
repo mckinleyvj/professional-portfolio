@@ -15,7 +15,6 @@ VARIABLES
 GLOBAL SELECTOR
 ------------------------------------*/
 * {
-	/*font-family: monospace, "Caveat", verdana, sans-serif;*/
 	font-family: "Red Hat Display", sans-serif;
 	font-size: 18px;
 	color: var(--super_black);
@@ -478,11 +477,9 @@ BODY - GLOBAL BODY SECTION
 	margin-bottom: 25px;
 	line-height: 1.5;
 	text-align: justify;
-	font-size: 18px;
 	cursor: default;
 	user-select: none;
 	color: var(--super_black);
-	text-shadow: 0 0 1px var(--alittle_black);
 	letter-spacing: 2px;
 }
 
@@ -506,7 +503,7 @@ BODY - WORK SECTION
 }
 
 .work-content-inner h2 {
-	font-size: 25px;
+	font-size: 22px;
 	text-align: left;
 	border-bottom: 1px solid var(--alittle_black);
 	margin: 0 15px;
@@ -524,7 +521,7 @@ BODY - WORK SECTION
 	padding: 10px;
 	border-radius: 10px;
 	margin-right: auto;
-	font-size: 22px;
+	font-size: 17px;
 }
 
 .work-content-container {
@@ -587,7 +584,7 @@ BODY - WORK SECTION
 	text-align: left;
 	width: 100%;
 	align-self: center;
-	font-size: 18px;
+	font-size: 17px;
 	padding: 5px 0;
 	color: var(--dirtywhite);
 }
@@ -663,10 +660,10 @@ MEDIA QUERIES
 		font-size: calc(30px - 0.5vw);
 	}
 	.home-content-1 .greet-desc {
-		font-size: calc(17px - 0.3vw);
+		font-size: calc(18px - 0.3vw);
 	}
 	.next a {
-		font-size: calc(17px - 0.3vw);
+		font-size: calc(18px - 0.3vw);
 	}
 	.home-content-3 {
 		margin-left: 100px;
@@ -707,7 +704,7 @@ MEDIA QUERIES
 		padding: 0 5px;
 	}
 	.work-content-inner h2 {
-		font-size: calc(20px - 0.3vw);
+		font-size: calc(22px - 0.3vw);
 	}
 	.work-content-container {
 		margin: 0;
@@ -739,7 +736,7 @@ MEDIA QUERIES
 		color: var(--orange);
 	}
 	.work-content-footer span {
-		font-size: calc(17px - 0.3vw);
+		font-size: calc(18px - 0.3vw);
 	}
 }
 /*--------Media of 1280px x 960px----------*/
@@ -748,18 +745,6 @@ MEDIA QUERIES
 @media screen and (max-width: 1280px) {
 	.home-content-3 {
 		margin-left: 25px;
-	}
-	.timeline {
-		width: 500px;
-	}
-	.timeline li:before {
-		font-size: 13px;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-
-	.timeline li:after {
-		font-size: 13px;
 	}
 }
 /*--------Media of 1024px x 768px----------*/
@@ -788,7 +773,18 @@ MEDIA QUERIES
 	.card-content {
 		padding: 60px 25px 25px 25px;
 	}
+	.timeline {
+		width: 600px;
+	}
+	.timeline li:before {
+		font-size: calc(15px - 0.3vw);
+		left: 50%;
+		transform: translateX(-50%);
+	}
 
+	.timeline li:after {
+		font-size: calc(15px - 0.3vw);
+	}
 	.paragraph-context,
 	.paragraph-context span,
 	.paragraph-context a {
@@ -797,7 +793,7 @@ MEDIA QUERIES
 		font-size: calc(15px - 0.3vw);
 	}
 	.Storyline-B figure figcaption {
-		font-size: calc(13px - 0.1vw);
+		font-size: calc(15px - 0.3vw);
 		margin: 10px 0;
 		padding: 5px;
 	}
@@ -812,6 +808,9 @@ MEDIA QUERIES
 	.next a {
 		font-size: calc(15px - 0.3vw);
 	}
+	.work-content-footer span {
+		font-size: calc(15px - 0.3vw);
+	}
 	.work-content-inner h2 {
 		font-size: calc(17px - 0.3vw);
 	}
@@ -819,13 +818,13 @@ MEDIA QUERIES
 		margin: 0;
 	}
 	.work-content-container figcaption {
-		font-size: calc(14px - 0.3vw);
+		font-size: calc(15px - 0.3vw);
 	}
 	.work-content-container figure {
 		width: 50%;
 	}
 	.fig-desc {
-		font-size: calc(14px - 0.3vw);
+		font-size: calc(15px - 0.3vw);
 	}
 }
 
@@ -844,16 +843,13 @@ MEDIA QUERIES
 		padding-bottom: 15px;
 	}
 	.home-content-1 .greet-desc {
-		font-size: calc(15px - 0.2vw);
+		font-size: calc(12px - 0.2vw);
 	}
 	._card_container_inner_home {
 		height: 91vh;
 		align-items: center;
 	}
-	.home-content-3 {
-		height: 91vh;
-		align-items: center;
-	}
+
 	.Storyline-A {
 		width: 80vw;
 	}
@@ -877,7 +873,19 @@ MEDIA QUERIES
 	.Storyline-B figure {
 		padding: 0 5px;
 	}
+	.work-content-inner h2 {
+		font-size: calc(15px - 0.3vw);
+	}
 	.next a {
+		font-size: calc(12px - 0.3vw);
+	}
+	.work-content-container figcaption {
+		font-size: calc(12px - 0.3vw);
+	}
+	.fig-desc {
+		font-size: calc(12px - 0.3vw);
+	}
+	.work-content-footer span {
 		font-size: calc(12px - 0.3vw);
 	}
 }
@@ -905,7 +913,7 @@ MEDIA QUERIES
 		padding-left: 5px;
 	}
 	._header_inner_container h2 {
-		font-size: calc(18px - 0.3vw);
+		font-size: calc(16px - 0.3vw);
 		color: var(--orange);
 	}
 	.time-now {
@@ -915,19 +923,20 @@ MEDIA QUERIES
 		padding-right: 9px;
 	}
 	.next {
+		font-size: calc(13px - 0.8vw);
 		padding: 25px;
 	}
 	.home-content-1 {
 		margin-top: 50px;
 	}
 	._header_inner_internal_links ul li a {
-		font-size: 16px;
+		font-size: 14px;
 		letter-spacing: 2px;
 	}
 	._card_container_inner_home {
 		flex-direction: column;
 		width: 100vw;
-		height: 75vh;
+		height: 70vh;
 	}
 
 	._header_inner_container,
@@ -943,14 +952,9 @@ MEDIA QUERIES
 
 	.home-content-1 strong,
 	.home-content-1 .greet {
-		font-size: calc(30px - 3.5vw);
+		font-size: calc(13px - 0.8vw);
 	}
-	.home-content-1 .greet-desc {
-		font-size: calc(18px - 1vw);
-	}
-	.next a {
-		font-size: calc(12px - 0.3vw);
-	}
+
 	.home-content-3 {
 		margin-left: 0px;
 		align-items: flex-start;
@@ -961,13 +965,11 @@ MEDIA QUERIES
 		width: 300px;
 	}
 	.timeline li:before {
-		font-size: 13px;
-		left: 50%;
-		transform: translateX(-50%);
+		font-size: calc(12px - 0.8vw);
 	}
 
 	.timeline li:after {
-		font-size: 13px;
+		font-size: calc(12px - 0.8vw);
 	}
 
 	.home-content-2 {
@@ -988,13 +990,9 @@ MEDIA QUERIES
 	}
 
 	.Storyline-B figure figcaption {
-		font-size: calc(16px - 0.4vw);
-		margin: 20px 0;
+		margin: 10px 5px;
 	}
-	.Storyline-B figure img {
-		height: 50px;
-		width: 50px;
-	}
+
 	.work-content-inner h2 {
 		text-align: center;
 	}
@@ -1030,9 +1028,6 @@ MEDIA QUERIES
 	}
 	.contact-content-inner {
 		justify-content: center;
-	}
-	.work-content-footer span {
-		font-size: calc(14px - 0.3vw);
 	}
 }
 /*END OF CODE*/
