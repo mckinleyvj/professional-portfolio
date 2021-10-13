@@ -786,9 +786,7 @@ MEDIA QUERIES
 	.card-content {
 		padding: 60px 25px 25px 25px;
 	}
-	.next a {
-		font-size: calc(15px - 0.3vw);
-	}
+
 	.paragraph-context,
 	.paragraph-context span,
 	.paragraph-context a {
@@ -809,6 +807,9 @@ MEDIA QUERIES
 	.Storyline-B figure {
 		padding: 0 5px;
 	}
+	.next a {
+		font-size: calc(15px - 0.3vw);
+	}
 	.work-content-inner h2 {
 		font-size: calc(17px - 0.3vw);
 	}
@@ -823,6 +824,60 @@ MEDIA QUERIES
 	}
 	.fig-desc {
 		font-size: calc(14px - 0.3vw);
+	}
+}
+
+/*--------Media of 800px x 600px----------*/
+/*-----------------Tablets----------------*/
+@media screen and (max-width: 800px) {
+	.home-content-2 img {
+		height: calc(250px - 7vw);
+	}
+	.next {
+		padding: 15px;
+	}
+	.home-content-1 strong,
+	.home-content-1 .greet {
+		font-size: calc(20px - 0.8vw);
+		padding-bottom: 15px;
+	}
+	.home-content-1 .greet-desc {
+		font-size: calc(15px - 0.2vw);
+	}
+	._card_container_inner_home {
+		height: 91vh;
+		align-items: center;
+	}
+	.home-content-3 {
+		/* margin-left: 25px; */
+		height: 91vh;
+		align-items: center;
+	}
+	.Storyline-A {
+		width: 80vw;
+	}
+	.paragraph-context,
+	.paragraph-context span,
+	.paragraph-context a {
+		margin-bottom: 10px;
+		line-height: 1.2;
+		font-size: calc(12px - 0.3vw);
+	}
+	.Storyline-B figure figcaption {
+		font-size: calc(12px - 0.3vw);
+		margin: 5px 0;
+		padding: 5px;
+	}
+	.Storyline-B figure img {
+		height: 35px;
+		width: 35px;
+	}
+
+	.Storyline-B figure {
+		padding: 0 5px;
+	}
+	.next a {
+		font-size: calc(12px - 0.3vw);
 	}
 }
 /*END OF CODE*/
