@@ -20,7 +20,9 @@
             - Double check codes & to remove redundant codes.
             - Final testing and removal of other pages by moving into dump folder.
             - Commit to GitHub with latest update & Update Readme.MD
-
+- 13/10/21  - Added GitHub Server-API to pull out last 6 repositories.
+            - Changed layout of webpage and color schemes.
+            - 
 ## Screenshots:
 
 ![image](https://user-images.githubusercontent.com/87624839/131791198-fbb46ed7-0106-4d2b-b114-70c228eb7d65.png)
