@@ -13,6 +13,28 @@ function displayTime() {
     $timeDisplayEl.text(rightNow);
 }setInterval(displayTime, 1000);
 
+function getContributors(contriLink) {
+  $.ajax({
+    url: contriLink,
+    method: "GET",
+    dataType: "json",
+
+    beforeSend: function () {
+      //reserve
+    },
+    complete: function () {
+      //reserve
+    },
+    success: function (res) {
+      //console.log(res);
+      return res;
+    },
+  error: function (err) {
+    console.log("Error\n" + err.message);
+  },
+});
+}
+
 function getGitHubRepos() {
   var githubREPO = "https://api.github.com/users/mckinleyvj/repos?sort=created&per_page=6";
   //per_page=
@@ -34,6 +56,10 @@ function getGitHubRepos() {
       var displayList = "";
     
         for (var i = 0; i < githubRepoList.length; i++) {
+
+          contriLink = "https://api.github.com/repos/mckinleyvj/" + githubRepoList[i].name + "/contributors";
+          const arr_contributors = getContributors(contriLink);
+          console.log(arr_contributors);
           displayList = `
           <figure>
           <figcaption id="#fig-glow">Repository: ${githubRepoList[i].name}</figcaption>
@@ -55,8 +81,8 @@ function getGitHubRepos() {
       }
     },
     error: function (err) {
-      console.log("Error\n" + err.message);
-     
+      console.error("Error\n" + err.message);
+      $workContent.attr('style','color: red').append("Error. Could not display repositories at this time.");
     },
   });
 }

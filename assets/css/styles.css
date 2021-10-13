@@ -543,13 +543,14 @@ BODY - WORK SECTION
 }
 
 .work-content-container a {
-	height: 200px;
+	/* height: 200px; */
 	width: 100%;
 	text-align: center;
+	display: flex;
 }
 
 .work-content-container img {
-	height: 200px;
+	height: 225px;
 	border-radius: 15px;
 	border: 2px solid var(--super_black);
 	padding: 10px;
@@ -578,6 +579,7 @@ BODY - WORK SECTION
 	margin-top: 2px;
 	background-color: rgb(0 0 0 / 70%);
 	width: 100%;
+	flex: 1 auto;
 }
 
 .fig-desc {
