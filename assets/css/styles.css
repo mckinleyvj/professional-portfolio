@@ -638,7 +638,7 @@ button {
 }
 
 .download-resume {
-	padding-left: 5px;
+	padding-left: 15px;
 }
 
 /*----------------------------------
@@ -957,6 +957,7 @@ MEDIA QUERIES
 	.home-content-1 strong,
 	.home-content-1 .greet {
 		font-size: calc(13px - 0.8vw);
+		transform: scale(1, 1.9);
 	}
 
 	.home-content-3 {

@@ -70,7 +70,7 @@ function getGitHubRepos() {
           ${githubRepoList[i].description}</span>
           <span class="fig-desc">Language: ${githubRepoList[i].language}</span>
           <span class="fig-desc">Last update: ${githubRepoList[i].updated_at}</span>
-          <span class="fig-desc"><a href="https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}" class="fig-desc" target="_blank">https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}</a></span>
+          <span class="fig-desc">Live URL: <a href="https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}" class="fig-desc" target="_blank">https://${githubRepoList[i].owner.login}.github.io/${githubRepoList[i].name}</a></span>
           </div>
           </div>
           </figure>
