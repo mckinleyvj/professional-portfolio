@@ -217,7 +217,7 @@ BODY - HOME SECTION
 	height: 100vh;
 	width: 100vw;
 	z-index: -100;
-	opacity: 0.3;
+	opacity: 0.15;
 }
 
 ._body_container_inner {
