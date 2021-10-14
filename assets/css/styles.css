@@ -932,7 +932,7 @@ MEDIA QUERIES
 		top: 10px;
 		text-align: right;
 		color: var(--dirtywhite);
-		padding-right: 9px;
+		padding-right: 5px;
 	}
 	.next {
 		font-size: calc(13px - 0.8vw);
@@ -976,6 +976,7 @@ MEDIA QUERIES
 		align-items: flex-start;
 		height: auto;
 		min-height: auto;
+		width: 100%;
 	}
 	.timeline {
 		width: 300px;
@@ -1044,6 +1045,12 @@ MEDIA QUERIES
 	}
 	.contact-content-inner {
 		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.time-now {
+		display: none;
 	}
 }
 /*END OF CODE*/
