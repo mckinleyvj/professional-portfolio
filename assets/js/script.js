@@ -13,25 +13,20 @@ function displayTime() {
     $timeDisplayEl.text(rightNow);
 }setInterval(displayTime, 1000);
 
-function getContributors(contriLink) {
- 
-}
-
 function getGitHubRepos() {
   var githubREPO = "https://api.github.com/users/mckinleyvj/repos?sort=created&per_page=6";
-  //per_page=
 
   $.ajax({
     url: githubREPO,
     method: "GET",
     dataType: "json",
 
-    beforeSend: function () {
-      //reserve
-    },
-    complete: function () {
-      //reserve
-    },
+    // beforeSend: function () {
+    //   //reserve
+    // },
+    // complete: function () {
+    //   //reserve
+    // },
     success: function (res) {
       var githubRepoList = res;
       var displayList = "";
