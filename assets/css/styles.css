@@ -228,7 +228,7 @@ BODY - HOME SECTION
 }
 
 ._card_container_home {
-	margin: 0 auto;
+	/* margin: 0 auto; */
 	align-items: center;
 }
 
@@ -255,13 +255,13 @@ BODY - HOME SECTION
 
 .home-content-1 strong {
 	font-size: 30px;
-	font-weight: 500;
+	font-weight: 900;
 	color: var(--orange);
 	padding-bottom: 25px;
-	transform: scale(1, 1.2);
-	text-shadow: 1 1 var(--dirtywhite);
+	/* transform: scale(1, 1.2); */
+	/* text-shadow: 1 1 var(--dirtywhite); */
 	letter-spacing: 5px;
-	text-shadow: 0 0 3px black;
+	/* text-shadow: 0 0 3px black; */
 }
 
 .home-content-1 .greet-desc {
@@ -310,17 +310,18 @@ BODY - HOME SECTION
 
 ._card_container_home {
 	display: flex;
-	flex: 1 0 auto;
+	flex: 1 auto;
 	flex-wrap: wrap;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: flex-start;
 	width: 100%;
+	height: 96vh;
 }
 
 ._card_container_inner_home {
 	display: flex;
-	flex: 1 0 auto;
+	/* flex: 1 1 auto; */
 	flex-wrap: nowrap;
 	flex-direction: row;
 	justify-content: flex-start;
@@ -330,7 +331,7 @@ BODY - HOME SECTION
 
 .home-content-3 {
 	display: flex;
-	min-height: 51vh;
+	/* min-height: 51vh; */
 	margin-left: 150px;
 }
 
@@ -759,17 +760,10 @@ MEDIA QUERIES
 	}
 	.home-content-1 strong,
 	.home-content-1 .greet {
-		font-size: calc(25px - 0.8vw);
+		font-size: calc(25px - 0.5vw);
 	}
 	.home-content-1 .greet-desc {
 		font-size: calc(15px - 0.2vw);
-	}
-	._card_container_inner_home {
-		flex-direction: row;
-		justify-content: center;
-	}
-	._card_container_home {
-		align-items: center;
 	}
 	.card-content-inner {
 		align-items: center;
@@ -849,10 +843,6 @@ MEDIA QUERIES
 	.home-content-1 .greet-desc {
 		font-size: calc(12px - 0.2vw);
 	}
-	._card_container_inner_home {
-		height: 91vh;
-		align-items: center;
-	}
 
 	.Storyline-A {
 		width: 80vw;
@@ -891,6 +881,18 @@ MEDIA QUERIES
 	}
 	.work-content-footer span {
 		font-size: calc(12px - 0.3vw);
+	}
+	.timeline {
+		width: 500px;
+	}
+	.timeline li:before {
+		font-size: calc(12px - 0.2vw);
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.timeline li:after {
+		font-size: calc(12px - 0.2vw);
 	}
 }
 
@@ -940,7 +942,8 @@ MEDIA QUERIES
 	._card_container_inner_home {
 		flex-direction: column;
 		width: 100vw;
-		height: 70vh;
+		/* height: 70vh; */
+		align-items: center;
 	}
 
 	._header_inner_container,
@@ -956,8 +959,10 @@ MEDIA QUERIES
 
 	.home-content-1 strong,
 	.home-content-1 .greet {
-		font-size: calc(13px - 0.8vw);
-		transform: scale(1, 1.9);
+		font-size: calc(15px - 0.8vw);
+		text-shadow: none;
+		font-weight: 900;
+		letter-spacing: 2px;
 	}
 
 	.home-content-3 {
