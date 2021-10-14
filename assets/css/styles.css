@@ -284,7 +284,7 @@ BODY - HOME SECTION
 }
 
 .next a:hover {
-	text-decoration-style: dotted;
+	/* text-decoration-style: dotted; */
 	text-decoration: underline;
 	text-decoration-color: var(--orange);
 	color: var(--orange);
@@ -640,6 +640,12 @@ button {
 
 .download-resume {
 	padding-left: 15px;
+}
+
+.download-resume:hover {
+	text-decoration: underline;
+	text-decoration-color: var(--orange);
+	color: var(--orange);
 }
 
 /*----------------------------------
