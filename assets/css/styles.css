@@ -594,6 +594,7 @@ BODY - WORK SECTION
 	width: 100%;
 	flex: 1 auto;
 	font-size: 14px;
+	line-height: 20px;
 }
 
 .fig-desc {
