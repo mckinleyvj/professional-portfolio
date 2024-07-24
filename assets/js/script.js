@@ -15,7 +15,7 @@ function displayTime() {
 setInterval(displayTime, 1000);
 
 function getGitHubRepos() {
-	var githubREPO1 = 'https://api.github.com/repos/mckinleyvj/password-generator';
+	// var githubREPO1 = 'https://api.github.com/repos/mckinleyvj/password-generator';
 	var githubREPO2 = 'https://api.github.com/repos/mckinleyvj/professional-portfolio';
 
 	$.ajax({
