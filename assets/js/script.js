@@ -36,7 +36,7 @@ function getGitHubRepos() {
           
           displayList = `
           <figure>
-          <figcaption id="#fig-glow">Repository: ${githubRepoList[i].name}</figcaption>
+          <figcaption id="#fig-glow">Repository: ${githubRepoList[i].name.toUpperCase()}</figcaption>
           <a href="${githubRepoList[i].html_url}"><img src="./assets/images/${githubRepoList[i].name}.png" alt="${githubRepoList[i].name}"></a>
           <div class="flex-fig-table">
           <div class="fig-table">
