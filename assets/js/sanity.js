@@ -4,7 +4,7 @@ async function fetchSanityDocument() {
     
     const pid = "Mmk4MGNrMDE=";
     const dts = "cHJvZHVjdGlvbg==";
-    const tc = "c2thQlBnVFl1VWFmYUZTcnVjT1d5NWswOEdZaDRiSW1ua1hub3hqZDNsNHBFMVVGVjgyOUI4VGhPU1pVQjV1bnhJZWhMUEdlRk12M1pIbElQeG9LdVNkMll4Yno1QzRweWZIS1IycHZJajZkRDVzc3lWczZEcFYwajhuaEQ1cGRKRnY5b210d0hHNUdPZ2N3ejhJM0pLaGd3SW9vWW1MNkY5Q0trcTdnR1N1bUluTnkzVklU"; 
+    const tc = "c2tYYVVIcUpFNVdhdzFPeExXM0Y1TlM4SFUyQmM0bEhaN0F4ZWNWeldiUGhUa2RFRDhEYVlVdXlKY05sMHZyNnpMajBYWUMyRjIwODBzOW12aVZTSmE0SWNvem96SWF3emg5TmtCQXlOdjQweXlaR0tCb3JDRG5udmF4RXRjcGdzVU4wSUtWd29TcktDVTJ4cldBMjhGUTVVemx4eVBVZW9BTEttc3hqdzdtN3FmMXRTcWt6"; 
     
     const prjId = atob(pid);
     const ds = atob(dts);
@@ -27,11 +27,22 @@ async function fetchSanityDocument() {
       const data = await response.json();
       const sanityDocument = data.result[0];
 
-      const title = sanityDocument.title;
-
-                // Display the title in the span
-                const titleElement = document.getElementById('documentTitle');
-                titleElement.innerText = title;
+      if (sanityDocument) {
+        document.getElementById('documentTitle').innerHTML = `<h1>${sanityDocument.title}</h1>`;
+        document.getElementById("resourceType").innerHTML = `<strong>Resource Type:</strong> ${sanityDocument.resource_type}`;
+        document.getElementById("resourceTime").innerHTML = `<strong>Time:</strong> ${sanityDocument.time} mins`;
+        document.getElementById("resourceTime").style.marginBottom = "20px";
+        
+        const resourceTypeElement = document.getElementById("content");
+        resourceTypeElement.innerHTML = "";
+        
+    
+    } else {
+            document.getElementById("title").innerText = "No document found with the specified ID.";
+            document.getElementById("resourceType").innerText = "";
+            document.getElementById("resourceTime").innerText = "";
+            document.getElementById("content").innerText = "";
+        }
     } catch (error) {
         console.error("Error fetching Sanity document:", error);
         document.getElementById("output").innerText = error.message;
