@@ -16,9 +16,8 @@ GLOBAL SELECTOR
 ------------------------------------*/
 * {
 	font-family: "Red Hat Display", sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	color: var(--super_black);
-	font-weight: 500;
 }
 
 h1,
