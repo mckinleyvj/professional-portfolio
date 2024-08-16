@@ -35,42 +35,38 @@
 <body>
     <div class="container">
         <h1>Sanity Document Data</h1>
-        <div id="jsonDisplay" class="json-container"></div>
+        <div id="jsonDisplay" class="json-container">Loading...</div>
     </div>
 
+    <!-- Link to the external sanity.js file -->
+    <script src="sanity.js"></script>
+    
     <script>
-        // Example JSON data returned from Sanity
-        const data = {
-            "result": [
-                {
-                    "_id": "3da7a102-15ee-466a-a0d1-0bf58a1610b9",
-                    "title": "Sample Title",
-                    "description": "This is a sample description",
-                    "author": {
-                        "name": "John Doe",
-                        "email": "john@example.com"
-                    },
-                    "publishedAt": "2024-08-15T10:00:00Z"
+        async function displaySanityDocument() {
+            try {
+                await fetchSanityDocument();
+
+                // Use the sanityDocument from the sanity.js script
+                const sanityDocument = window.sanityDocument;
+
+                // Pretty-print JSON data
+                function prettyPrintJson(jsonObj) {
+                    const jsonStr = JSON.stringify(jsonObj, null, 2);
+                    return jsonStr.replace(/"(.*?)":/g, '<span class="key">"$1":</span>')
+                                  .replace(/: "(.*?)"/g, ': <span class="value">"$1"</span>')
+                                  .replace(/: (\d+)/g, ': <span class="value">$1</span>')
+                                  .replace(/: (\{|\[)/g, ': <span class="value">$1</span>')
+                                  .replace(/(\}|\])/g, '<span class="value">$1</span>');
                 }
-            ]
-        };
 
-        // Get the first document from the result array
-        const sanityDocument = data.result[0];
-
-        // Function to pretty print JSON object
-        function prettyPrintJson(jsonObj) {
-            const jsonStr = JSON.stringify(jsonObj, null, 2);
-            return jsonStr.replace(/"(.*?)":/g, '<span class="key">"$1":</span>')
-                          .replace(/: "(.*?)"/g, ': <span class="value">"$1"</span>')
-                          .replace(/: (\d+)/g, ': <span class="value">$1</span>')
-                          .replace(/: (\{|\[)/g, ': <span class="value">$1</span>')
-                          .replace(/(\}|\])/g, '<span class="value">$1</span>');
+                const jsonDisplayElement = document.getElementById('jsonDisplay');
+                jsonDisplayElement.innerHTML = prettyPrintJson(sanityDocument);
+            } catch (error) {
+                document.getElementById("jsonDisplay").innerText = "Error loading data.";
+            }
         }
 
-        // Display the JSON data on the page
-        const jsonDisplayElement = document.getElementById('jsonDisplay');
-        jsonDisplayElement.innerHTML = prettyPrintJson(sanityDocument);
+        displaySanityDocument();
     </script>
 </body>
 </html>
