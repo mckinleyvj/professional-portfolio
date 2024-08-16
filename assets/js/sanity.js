@@ -1,6 +1,7 @@
 async function fetchSanityDocument() {
 		    
-    const docId = "3da7a102-15ee-466a-a0d1-0bf58a1610b9"; //Replace this to relevant resource
+    //const docId = "3da7a102-15ee-466a-a0d1-0bf58a1610b9"; //Replace this to relevant resource
+    const docId ="929399a8-6128-4767-a729-60cdd882afa2";
     
     const pid = "Mmk4MGNrMDE=";
     const dts = "cHJvZHVjdGlvbg==";
@@ -192,7 +193,9 @@ async function fetchSanityDocument() {
                   const iframe = doc2.querySelector("iframe");
 
                   if (iframe) {
-                    const src = "https://apm.eskilled.com.au/pluginfile.php/91094/mod_resource/content/4/Communicaton%20skills.wdgt/index.html"; //Replace this URL to uploaded storyline file in eskilled
+                    const src = iframe.getAttribute("src");
+                    console.log(src);
+                    //const src = "https://apm.eskilled.com.au/pluginfile.php/91094/mod_resource/content/4/Communicaton%20skills.wdgt/index.html"; //Replace this URL to uploaded storyline file in eskilled
                     const extWindowWidth = window.screen.width;
                     const extWindowHeight = window.screen.height;
 
