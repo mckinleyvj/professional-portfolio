@@ -194,7 +194,7 @@ async function fetchSanityDocument() {
 
                   if (iframe) {
                     const src = iframe.getAttribute("src");
-                    console.log(src);
+                    console.log(storylineLink);
                     //const src = "https://apm.eskilled.com.au/pluginfile.php/91094/mod_resource/content/4/Communicaton%20skills.wdgt/index.html"; //Replace this URL to uploaded storyline file in eskilled
                     const extWindowWidth = window.screen.width;
                     const extWindowHeight = window.screen.height;
@@ -226,7 +226,7 @@ async function fetchSanityDocument() {
 
                     storylineBtn.addEventListener("click", function() {
                         
-                        const newWindow = window.open(src,
+                        const newWindow = window.open(storylineLink,
                           '_blank',
                           `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
                         );
