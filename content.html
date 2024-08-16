@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanity Document Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .json-container {
+            margin-top: 20px;
+            white-space: pre-wrap;
+            background-color: #efefef;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .key {
+            color: #d14;
+        }
+        .value {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sanity Document Data</h1>
+        <div id="jsonDisplay" class="json-container"></div>
+    </div>
+
+    <script>
+        // Example JSON data returned from Sanity
+        const data = {
+            "result": [
+                {
+                    "_id": "3da7a102-15ee-466a-a0d1-0bf58a1610b9",
+                    "title": "Sample Title",
+                    "description": "This is a sample description",
+                    "author": {
+                        "name": "John Doe",
+                        "email": "john@example.com"
+                    },
+                    "publishedAt": "2024-08-15T10:00:00Z"
+                }
+            ]
+        };
+
+        // Get the first document from the result array
+        const sanityDocument = data.result[0];
+
+        // Function to pretty print JSON object
+        function prettyPrintJson(jsonObj) {
+            const jsonStr = JSON.stringify(jsonObj, null, 2);
+            return jsonStr.replace(/"(.*?)":/g, '<span class="key">"$1":</span>')
+                          .replace(/: "(.*?)"/g, ': <span class="value">"$1"</span>')
+                          .replace(/: (\d+)/g, ': <span class="value">$1</span>')
+                          .replace(/: (\{|\[)/g, ': <span class="value">$1</span>')
+                          .replace(/(\}|\])/g, '<span class="value">$1</span>');
+        }
+
+        // Display the JSON data on the page
+        const jsonDisplayElement = document.getElementById('jsonDisplay');
+        jsonDisplayElement.innerHTML = prettyPrintJson(sanityDocument);
+    </script>
+</body>
+</html>
