@@ -226,10 +226,11 @@ async function fetchSanityDocument() {
 
                     storylineBtn.addEventListener("click", function() {
                         
-                        const newWindow = window.open(storylineLink,
-                          '_blank',
-                          `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
-                        );
+                      resourceTypeElement.appendChild(storylineLink);
+                        // const newWindow = window.open(src,
+                        //   '_blank',
+                        //   `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
+                        // );
                       });
 
                     resourceTypeElement.appendChild(storylineBtn);
