@@ -28,9 +28,9 @@ async function fetchSanityDocument() {
       const sanityDocument = data.result[0];
 
       if (sanityDocument) {
-        document.getElementById('documentTitle').innerHTML = `${sanityDocument.title}`;
-        document.getElementById("resourceType").innerHTML = `<strong>Resource Type:</strong> ${sanityDocument.resource_type}`;
-        document.getElementById("resourceTime").innerHTML = `<strong>Time:</strong> ${sanityDocument.time} mins`;
+        document.getElementById('documentTitle').innerHTML = `<h2>${sanityDocument.title}</h2>`;
+        document.getElementById("resourceType").innerHTML = `<span><strong>Resource Type:</strong> ${sanityDocument.resource_type}</span>`;
+        document.getElementById("resourceTime").innerHTML = `<span><strong>Time:</strong> ${sanityDocument.time} mins</span>`;
         document.getElementById("resourceTime").style.marginBottom = "20px";
         
         const resourceTypeElement = document.getElementById("content");
@@ -38,14 +38,14 @@ async function fetchSanityDocument() {
         
     
     } else {
-            document.getElementById("title").innerText = "No document found with the specified ID.";
+            document.getElementById("documentTitle").innerText = "No document found with the specified ID.";
             document.getElementById("resourceType").innerText = "";
             document.getElementById("resourceTime").innerText = "";
             document.getElementById("content").innerText = "";
         }
     } catch (error) {
         console.error("Error fetching Sanity document:", error);
-        document.getElementById("output").innerText = error.message;
+        document.getElementById("content").innerText = error.message;
       }
     }
 
