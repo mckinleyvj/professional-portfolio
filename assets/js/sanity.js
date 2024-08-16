@@ -28,7 +28,7 @@ async function fetchSanityDocument() {
       const sanityDocument = data.result[0];
 
       if (sanityDocument) {
-        document.getElementById('documentTitle').innerHTML = `<h1>${sanityDocument.title}</h1>`;
+        document.getElementById('documentTitle').innerHTML = `${sanityDocument.title}`;
         document.getElementById("resourceType").innerHTML = `<strong>Resource Type:</strong> ${sanityDocument.resource_type}`;
         document.getElementById("resourceTime").innerHTML = `<strong>Time:</strong> ${sanityDocument.time} mins`;
         document.getElementById("resourceTime").style.marginBottom = "20px";
