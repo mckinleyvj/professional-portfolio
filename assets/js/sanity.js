@@ -26,6 +26,12 @@ async function fetchSanityDocument() {
 
       const data = await response.json();
       const sanityDocument = data.result[0];
+
+      const title = sanityDocument.title;
+
+                // Display the title in the span
+                const titleElement = document.getElementById('documentTitle');
+                titleElement.innerText = title;
     } catch (error) {
         console.error("Error fetching Sanity document:", error);
         document.getElementById("output").innerText = error.message;

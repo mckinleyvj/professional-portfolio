@@ -35,38 +35,10 @@
 <body>
     <div class="container">
         <h1>Sanity Document Data</h1>
-        <div id="jsonDisplay" class="json-container">Loading...</div>
+        <span id="documentTitle"></span>
     </div>
 
-    <!-- Link to the external sanity.js file -->
+
     <script src="sanity.js"></script>
-    
-    <script>
-        async function displaySanityDocument() {
-            try {
-                await fetchSanityDocument();
-
-                // Use the sanityDocument from the sanity.js script
-                const sanityDocument = window.sanityDocument;
-
-                // Pretty-print JSON data
-                function prettyPrintJson(jsonObj) {
-                    const jsonStr = JSON.stringify(jsonObj, null, 2);
-                    return jsonStr.replace(/"(.*?)":/g, '<span class="key">"$1":</span>')
-                                  .replace(/: "(.*?)"/g, ': <span class="value">"$1"</span>')
-                                  .replace(/: (\d+)/g, ': <span class="value">$1</span>')
-                                  .replace(/: (\{|\[)/g, ': <span class="value">$1</span>')
-                                  .replace(/(\}|\])/g, '<span class="value">$1</span>');
-                }
-
-                const jsonDisplayElement = document.getElementById('jsonDisplay');
-                jsonDisplayElement.innerHTML = prettyPrintJson(sanityDocument);
-            } catch (error) {
-                document.getElementById("jsonDisplay").innerText = "Error loading data.";
-            }
-        }
-
-        displaySanityDocument();
-    </script>
 </body>
 </html>
