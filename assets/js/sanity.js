@@ -235,10 +235,16 @@ async function fetchSanityDocument() {
 
                         if (newWindow) {
                           // Ensure that the window is fully opened before resizing
-                          newWindow.onload = function() {
-                            const storylineIframe = document.createElement("iframe");
-                            newWindow.appendChild(storylineIframe);
-                          };
+                          setTimeout(() => {
+                            newWindow.onload = function() {
+                              const storylineIframe = document.createElement("iframe");
+                              storylineIframe.src = src;
+                              storylineIframe.width = '100%';
+                              storylineIframe.height = '600px';
+                              newWindow.appendChild(storylineIframe);
+                            };
+                          }, 2000);
+                          
                         } else {
                           console.error("Failed to open new window");
                         }
