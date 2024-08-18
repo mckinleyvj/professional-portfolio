@@ -227,13 +227,26 @@ async function fetchSanityDocument() {
                     storylineBtn.addEventListener("click", function() {
                         
                       resourceTypeElement.appendChild(storylineLink);
-                        // const newWindow = window.open(src,
-                        //   '_blank',
-                        //   `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
-                        // );
+                        //const newWindow = window.open(src,
+                        const newWindow = window.open('about:blank',
+                          '_blank',
+                          `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
+                        );
+
+                        if (newWindow) {
+                          // Ensure that the window is fully opened before resizing
+                          newWindow.onload = function() {
+                            const storylineIframe = document.createElement("iframe");
+                            newWindow.appendChild(storylineIframe);
+                          };
+                        } else {
+                          console.error("Failed to open new window");
+                        }
+
                       });
 
                     resourceTypeElement.appendChild(storylineBtn);
+                    
                   }
                 } else {
                   const errorText = document.createElement("p");
