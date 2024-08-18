@@ -226,7 +226,7 @@ async function fetchSanityDocument() {
 
                     storylineBtn.addEventListener("click", function() {
                         
-                      resourceTypeElement.appendChild(storylineLink);
+                      //resourceTypeElement.appendChild(storylineLink);
                         //const newWindow = window.open(src,
                         const newWindow = window.open('about:blank',
                           '_blank',
