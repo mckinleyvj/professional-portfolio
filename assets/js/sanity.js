@@ -239,33 +239,8 @@ async function fetchSanityDocument() {
                       this.style.border = 'none';
                     };
 
-                    function openModalWithObject(theSrc) {
-                      const modal = document.getElementById("redirectModal");
-                      const object = document.getElementById("modalObject");
-                    
-                      // Set the object's data attribute to the provided URL
-                      object.data = theSrc;
-                      object.type = "text/html"; // Optional, specify the MIME type if needed
-                    
-                      // Display the modal
-                      modal.style.display = "block";
-                    
-                      // Get the <span> element that closes the modal
-                      const span = document.getElementsByClassName("close")[0];
-                    
-                      // Close the modal when the close button is clicked
-                      span.onclick = function() {
-                        modal.style.display = "none";
-                        object.data = ""; // Optionally clear the object's data when closing the modal
-                      };
-                    
-                      // Close the modal when clicking outside of it
-                      window.onclick = function(event) {
-                        if (event.target == modal) {
-                          modal.style.display = "none";
-                          object.data = ""; // Optionally clear the object's data when closing the modal
-                        }
-                      };
+                    function openNewTab(theSrc) {
+                      window.open(theSrc, "_blank");
                     }
 
                     storylineBtn.addEventListener("click", function() {
@@ -273,7 +248,7 @@ async function fetchSanityDocument() {
                         // '_blank',
                         //   `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
                         // );
-                        openModalWithObject(src);
+                        openNewTab(src);
                       });
 
                     resourceTypeElement.appendChild(storylineBtn);
