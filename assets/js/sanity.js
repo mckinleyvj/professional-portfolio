@@ -240,7 +240,10 @@ async function fetchSanityDocument() {
                     };
 
                     function openNewTab(theSrc) {
-                      window.open(theSrc, "_blank");
+                      window.open(theSrc, 
+                        "_blank",
+                        `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
+                      );
                     }
 
                     storylineBtn.addEventListener("click", function() {
@@ -322,11 +325,19 @@ async function fetchSanityDocument() {
                       this.style.border = 'none';
                     };
 
-                    bookwidgetBtn.addEventListener("click",function() {
-                        const newWindow = window.open(src,
-                          '_blank',
-                          `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
-                        );
+                    function openNewTab(theSrc) {
+                      window.open(theSrc, 
+                        "_blank",
+                        `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
+                      );
+                    }
+
+                    bookwidgetBtn.addEventListener("click", function() {
+                        // const newWindow = window.open(src,
+                        // '_blank',
+                        //   `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
+                        // );
+                        openNewTab(src);
                       });
 
                     resourceTypeElement.appendChild(bookwidgetBtn);
