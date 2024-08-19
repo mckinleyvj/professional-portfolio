@@ -239,12 +239,13 @@ async function fetchSanityDocument() {
                       this.style.border = 'none';
                     };
 
-                    function openModalWithIframe(theSrc) {
+                    function openModalWithObject(theSrc) {
                       const modal = document.getElementById("redirectModal");
-                      const iframe = document.getElementById("modalIframe");
+                      const object = document.getElementById("modalObject");
                     
-                      // Set the iframe's src to the provided URL
-                      iframe.src = theSrc;
+                      // Set the object's data attribute to the provided URL
+                      object.data = theSrc;
+                      object.type = "text/html"; // Optional, specify the MIME type if needed
                     
                       // Display the modal
                       modal.style.display = "block";
@@ -255,14 +256,14 @@ async function fetchSanityDocument() {
                       // Close the modal when the close button is clicked
                       span.onclick = function() {
                         modal.style.display = "none";
-                        iframe.src = ""; // Optionally clear the iframe src when closing the modal
+                        object.data = ""; // Optionally clear the object's data when closing the modal
                       };
                     
                       // Close the modal when clicking outside of it
                       window.onclick = function(event) {
                         if (event.target == modal) {
                           modal.style.display = "none";
-                          iframe.src = ""; // Optionally clear the iframe src when closing the modal
+                          object.data = ""; // Optionally clear the object's data when closing the modal
                         }
                       };
                     }
@@ -272,7 +273,7 @@ async function fetchSanityDocument() {
                         // '_blank',
                         //   `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
                         // );
-                        openModalWithIframe(src);
+                        openModalWithObject(src);
                       });
 
                     resourceTypeElement.appendChild(storylineBtn);
