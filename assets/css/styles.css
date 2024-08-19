@@ -713,6 +713,7 @@ CONTENT PAGE
 /*----------------------------------
 MODAL CONTAINER
 ------------------------------------*/
+/* Modal container */
 .modal {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
@@ -728,7 +729,7 @@ MODAL CONTAINER
   /* Modal content */
   .modal-content {
 	position: relative;
-	margin: 10% auto; /* 10% from the top and centered */
+	margin: 20% auto; /* 20% from the top and centered */
 	padding: 20px;
 	width: 300px;
 	background-color: white;
@@ -750,12 +751,6 @@ MODAL CONTAINER
   .close:focus {
 	color: black;
 	text-decoration: none;
-	cursor: pointer;
-  }
-  
-  button {
-	margin: 5px;
-	padding: 10px 20px;
 	cursor: pointer;
   }
 
