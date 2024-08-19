@@ -179,8 +179,9 @@ async function fetchSanityDocument() {
                 console.error("Error fetching video document:", error);
               });
           } else if (item._type === "storyline_reference") { //Resource with storyline reference section
-            const storylineDoc = `https://${prjId}.api.sanity.io/v2021-06-07/data/query/${ds}?query=*[_id == "${item._ref}"]`;
-
+            //const storylineDoc = `https://${prjId}.api.sanity.io/v2021-06-07/data/query/${ds}?query=*[_id == "${item._ref}"]`;
+           const storylineDoc = `https://app.dev.apm-pp.com/fetch-content?url=https://cdne-staff-dev.azureedge.net/Final%20storyline%20/Sample%20resume%201%20(2)/story.html`;
+  
             fetch(storylineDoc, {
                 headers: {
                   Authorization: `Bearer ${aTc}`,
@@ -193,6 +194,7 @@ async function fetchSanityDocument() {
                 },
               })
               .then((response) => {
+                console.log(response);
                 if (!response.ok) {
                   throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -257,7 +259,6 @@ async function fetchSanityDocument() {
                         // '_blank',
                         //   `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
                         // );
-                        console.log(src);
                         openWindowWithIframe(src);
                       });
 
