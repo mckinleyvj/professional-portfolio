@@ -194,7 +194,6 @@ async function fetchSanityDocument() {
 
                   if (iframe) {
                     const src = iframe.getAttribute("src");
-                    console.log(storylineLink);
                     //const src = "https://apm.eskilled.com.au/pluginfile.php/91094/mod_resource/content/4/Communicaton%20skills.wdgt/index.html"; //Replace this URL to uploaded storyline file in eskilled
                     const extWindowWidth = window.screen.width;
                     const extWindowHeight = window.screen.height;
@@ -233,22 +232,16 @@ async function fetchSanityDocument() {
                           `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
                         );
 
-                        if (newWindow) {
-                          // Ensure that the window is fully opened before resizing
+                        
                           setTimeout(() => {
-                            newWindow.onload = function() {
+                              console.log(src);
                               const storylineIframe = document.createElement("iframe");
                               storylineIframe.src = src;
                               storylineIframe.width = '100%';
                               storylineIframe.height = '600px';
                               newWindow.appendChild(storylineIframe);
-                            };
-                          }, 2000);
-                          
-                        } else {
-                          console.error("Failed to open new window");
-                        }
-
+                            
+                          }, 5000);
                       });
 
                     resourceTypeElement.appendChild(storylineBtn);
