@@ -208,7 +208,8 @@ async function fetchSanityDocument() {
                   const iframe = doc2.querySelector("iframe");
 
                   if (iframe) {
-                    const src = iframe.getAttribute("src");
+                    //const src = iframe.getAttribute("src");
+                    const src = "https://tinyurl.com/4ywz8n86";
                     //const src = "https://apm.eskilled.com.au/pluginfile.php/91094/mod_resource/content/4/Communicaton%20skills.wdgt/index.html"; //Replace this URL to uploaded storyline file in eskilled
                     const extWindowWidth = window.screen.width;
                     const extWindowHeight = window.screen.height;
@@ -257,6 +258,7 @@ async function fetchSanityDocument() {
                       setTimeout(() => {
                         window.open(theSrc, "_blank");
                         modal.style.display = "none"; // Optionally close the modal after opening the new tab
+
                       }, 1000); // Adjust the delay as needed (1000ms = 1 second)
 
                       window.onclick = function(event) {
