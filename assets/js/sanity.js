@@ -223,25 +223,27 @@ async function fetchSanityDocument() {
                       this.style.border = 'none';
                     };
 
-                    storylineBtn.addEventListener("click", function() {
-                        
-                      //resourceTypeElement.appendChild(storylineLink);
-                        //const newWindow = window.open(src,
-                        const newWindow = window.open('about:blank',
-                          '_blank',
-                          `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
-                        );
+                    function openWindowWithIframe(theSrc) {
+                      // Open a new window
+                      const newWindow = window.open("", "_blank", "width=800,height=600,left=100,top=0,scrollbars=yes,resizable=yes");
+                  
+                      // Create the iframe element
+                      const iframe = document.createElement("iframe");
+                      iframe.src = theSrc;
+                      iframe.style.width = "100%";
+                      iframe.style.height = "100%";
+                  
+                      // Embed the iframe in the new window's document
+                      newWindow.document.body.appendChild(iframe);
+                  }
 
-                        
-                          setTimeout(() => {
-                              console.log(src);
-                              const storylineIframe = document.createElement("iframe");
-                              storylineIframe.src = src;
-                              storylineIframe.width = '100%';
-                              storylineIframe.height = '600px';
-                              newWindow.appendChild(storylineIframe);
-                            
-                          }, 5000);
+                    storylineBtn.addEventListener("click", function() {
+                        // const newWindow = window.open(src,
+                        // '_blank',
+                        //   `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
+                        // );
+                        console.log(src);
+                        openWindowWithIframe(src);
                       });
 
                     resourceTypeElement.appendChild(storylineBtn);
