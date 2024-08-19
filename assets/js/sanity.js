@@ -179,8 +179,7 @@ async function fetchSanityDocument() {
                 console.error("Error fetching video document:", error);
               });
           } else if (item._type === "storyline_reference") { //Resource with storyline reference section
-            //const storylineDoc = `https://${prjId}.api.sanity.io/v2021-06-07/data/query/${ds}?query=*[_id == "${item._ref}"]`;
-           const storylineDoc = `https://app.dev.apm-pp.com/fetch-content?url=https://cdne-staff-dev.azureedge.net/Final%20storyline%20/Sample%20resume%201%20(2)/story.html`;
+            const storylineDoc = `https://${prjId}.api.sanity.io/v2021-06-07/data/query/${ds}?query=*[_id == "${item._ref}"]`;
   
             fetch(storylineDoc, {
                 headers: {
@@ -240,26 +239,43 @@ async function fetchSanityDocument() {
                       this.style.border = 'none';
                     };
 
-                    function openWindowWithIframe(theSrc) {
-                      // Open a new window
-                      const newWindow = window.open("", "_blank", "width=800,height=600,left=100,top=0,scrollbars=yes,resizable=yes");
-                  
-                      // Create the iframe element
-                      const iframe = document.createElement("iframe");
+                    function openModalWithIframe(theSrc) {
+                      // Get the modal
+                      const modal = document.getElementById("iframeModal");
+                    
+                      // Get the iframe inside the modal
+                      const iframe = document.getElementById("modalIframe");
+                    
+                      // Set the iframe source
                       iframe.src = theSrc;
-                      iframe.style.width = "100%";
-                      iframe.style.height = "100%";
-                  
-                      // Embed the iframe in the new window's document
-                      newWindow.document.body.appendChild(iframe);
-                  }
+                    
+                      // Display the modal
+                      modal.style.display = "block";
+                    
+                      // Get the <span> element that closes the modal
+                      const span = document.getElementsByClassName("close")[0];
+                    
+                      // When the user clicks on <span> (x), close the modal
+                      span.onclick = function() {
+                        modal.style.display = "none";
+                        iframe.src = ""; // Clear the iframe source when closing
+                      };
+                    
+                      // When the user clicks anywhere outside of the modal, close it
+                      window.onclick = function(event) {
+                        if (event.target == modal) {
+                          modal.style.display = "none";
+                          iframe.src = ""; // Clear the iframe source when closing
+                        }
+                      };
+                    }
 
                     storylineBtn.addEventListener("click", function() {
                         // const newWindow = window.open(src,
                         // '_blank',
                         //   `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
                         // );
-                        openWindowWithIframe(src);
+                        openModalWithIframe(src);
                       });
 
                     resourceTypeElement.appendChild(storylineBtn);
