@@ -193,7 +193,6 @@ async function fetchSanityDocument() {
                 },
               })
               .then((response) => {
-                console.log(response);
                 if (!response.ok) {
                   throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -239,15 +238,9 @@ async function fetchSanityDocument() {
                       this.style.border = 'none';
                     };
 
-                    function openModalWithIframe(theSrc) {
+                    function openRedirectModal(theSrc) {
                       // Get the modal
-                      const modal = document.getElementById("iframeModal");
-                    
-                      // Get the iframe inside the modal
-                      const iframe = document.getElementById("modalIframe");
-                    
-                      // Set the iframe source
-                      iframe.src = theSrc;
+                      const modal = document.getElementById("redirectModal");
                     
                       // Display the modal
                       modal.style.display = "block";
@@ -255,17 +248,29 @@ async function fetchSanityDocument() {
                       // Get the <span> element that closes the modal
                       const span = document.getElementsByClassName("close")[0];
                     
+                      // Get the buttons
+                      const confirmBtn = document.getElementById("confirmRedirect");
+                      const cancelBtn = document.getElementById("cancelRedirect");
+                    
                       // When the user clicks on <span> (x), close the modal
                       span.onclick = function() {
                         modal.style.display = "none";
-                        iframe.src = ""; // Clear the iframe source when closing
+                      };
+                    
+                      // When the user clicks "Yes", redirect to the src
+                      confirmBtn.onclick = function() {
+                        window.location.href = theSrc;
+                      };
+                    
+                      // When the user clicks "No", close the modal
+                      cancelBtn.onclick = function() {
+                        modal.style.display = "none";
                       };
                     
                       // When the user clicks anywhere outside of the modal, close it
                       window.onclick = function(event) {
                         if (event.target == modal) {
                           modal.style.display = "none";
-                          iframe.src = ""; // Clear the iframe source when closing
                         }
                       };
                     }
@@ -275,7 +280,7 @@ async function fetchSanityDocument() {
                         // '_blank',
                         //   `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
                         // );
-                        openModalWithIframe(src);
+                        openRedirectModal(src);
                       });
 
                     resourceTypeElement.appendChild(storylineBtn);
