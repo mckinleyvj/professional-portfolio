@@ -18,6 +18,11 @@ async function fetchSanityDocument() {
         headers: {
           Authorization: `Bearer ${aTc}`,
           "Content-Type": "application/json",
+          'Referrer-Policy': 'no-referrer',
+          'X-Frame-Options': 'sameorigin',
+          'X-Content-Type-Options': 'nosniff',
+          'Permissions-Policy': 'accelerometer=(),autoplay=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),geolocation=(),gyroscope=(),magnetometer=(),microphone=(),midi=(),payment=(),picture-in-picture=(),publickey-credentials-get=(),screen-wake-lock=(),sync-xhr=(self),usb=(),web-share=(),xr-spatial-tracking=()',
+          'Content-Security-Policy': "default-src 'none';",
         },
       });
 
@@ -124,6 +129,11 @@ async function fetchSanityDocument() {
                 headers: {
                   Authorization: `Bearer ${aTc}`,
                   "Content-Type": "application/json",
+                  'Referrer-Policy': 'no-referrer',
+                  'X-Frame-Options': 'sameorigin',
+                  'X-Content-Type-Options': 'nosniff',
+                  'Permissions-Policy': 'accelerometer=(),autoplay=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),geolocation=(),gyroscope=(),magnetometer=(),microphone=(),midi=(),payment=(),picture-in-picture=(),publickey-credentials-get=(),screen-wake-lock=(),sync-xhr=(self),usb=(),web-share=(),xr-spatial-tracking=()',
+                  'Content-Security-Policy': "default-src 'none';",
                 },
               })
               .then((response) => {
@@ -175,6 +185,11 @@ async function fetchSanityDocument() {
                 headers: {
                   Authorization: `Bearer ${aTc}`,
                   "Content-Type": "application/json",
+                  'Referrer-Policy': 'no-referrer',
+                  'X-Frame-Options': 'sameorigin',
+                  'X-Content-Type-Options': 'nosniff',
+                  'Permissions-Policy': 'accelerometer=(),autoplay=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),geolocation=(),gyroscope=(),magnetometer=(),microphone=(),midi=(),payment=(),picture-in-picture=(),publickey-credentials-get=(),screen-wake-lock=(),sync-xhr=(self),usb=(),web-share=(),xr-spatial-tracking=()',
+                  'Content-Security-Policy': "default-src 'none';",
                 },
               })
               .then((response) => {
@@ -265,6 +280,11 @@ async function fetchSanityDocument() {
                 headers: {
                   Authorization: `Bearer ${aTc}`,
                   "Content-Type": "application/json",
+                  'Referrer-Policy': 'no-referrer',
+                  'X-Frame-Options': 'sameorigin',
+                  'X-Content-Type-Options': 'nosniff',
+                  'Permissions-Policy': 'accelerometer=(),autoplay=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),geolocation=(),gyroscope=(),magnetometer=(),microphone=(),midi=(),payment=(),picture-in-picture=(),publickey-credentials-get=(),screen-wake-lock=(),sync-xhr=(self),usb=(),web-share=(),xr-spatial-tracking=()',
+                  'Content-Security-Policy': "default-src 'none';",
                 },
               })
               .then((response) => {
