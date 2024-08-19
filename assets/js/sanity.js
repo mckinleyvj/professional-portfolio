@@ -238,7 +238,7 @@ async function fetchSanityDocument() {
                       this.style.border = 'none';
                     };
 
-                    function openRedirectModal(theSrc) {
+                    function openModalAndNewTab(theSrc) {
                       // Get the modal
                       const modal = document.getElementById("redirectModal");
                     
@@ -255,8 +255,15 @@ async function fetchSanityDocument() {
                     
                       // Redirect to the provided URL after displaying the modal
                       setTimeout(() => {
-                        window.location.href = theSrc;
-                      }, 1000); // Wait for 1 second before redirecting
+                        window.open(theSrc, "_blank");
+                        modal.style.display = "none"; // Optionally close the modal after opening the new tab
+                      }, 1000); // Adjust the delay as needed (1000ms = 1 second)
+
+                      window.onclick = function(event) {
+                        if (event.target == modal) {
+                          modal.style.display = "none";
+                        }
+                      };
                     }
 
                     storylineBtn.addEventListener("click", function() {
@@ -264,7 +271,7 @@ async function fetchSanityDocument() {
                         // '_blank',
                         //   `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
                         // );
-                        openRedirectModal(src);
+                        openModalAndNewTab(src);
                       });
 
                     resourceTypeElement.appendChild(storylineBtn);
