@@ -208,8 +208,8 @@ async function fetchSanityDocument() {
                   const iframe = doc2.querySelector("iframe");
 
                   if (iframe) {
-                    //const src = iframe.getAttribute("src");
-                    const src = "https://tinyurl.com/4ywz8n86";
+                    const src = iframe.getAttribute("src");
+                    //const src = "https://tinyurl.com/4ywz8n86";
                     //const src = "https://apm.eskilled.com.au/pluginfile.php/91094/mod_resource/content/4/Communicaton%20skills.wdgt/index.html"; //Replace this URL to uploaded storyline file in eskilled
                     const extWindowWidth = window.screen.width;
                     const extWindowHeight = window.screen.height;
@@ -239,9 +239,12 @@ async function fetchSanityDocument() {
                       this.style.border = 'none';
                     };
 
-                    function openModalAndNewTab(theSrc) {
-                      // Get the modal
+                    function openModalWithIframe(theSrc) {
                       const modal = document.getElementById("redirectModal");
+                      const iframe = document.getElementById("modalIframe");
+                    
+                      // Set the iframe's src to the provided URL
+                      iframe.src = theSrc;
                     
                       // Display the modal
                       modal.style.display = "block";
@@ -252,18 +255,14 @@ async function fetchSanityDocument() {
                       // Close the modal when the close button is clicked
                       span.onclick = function() {
                         modal.style.display = "none";
+                        iframe.src = ""; // Optionally clear the iframe src when closing the modal
                       };
                     
-                      // Redirect to the provided URL after displaying the modal
-                      setTimeout(() => {
-                        window.open(theSrc, "_blank");
-                        modal.style.display = "none"; // Optionally close the modal after opening the new tab
-
-                      }, 1000); // Adjust the delay as needed (1000ms = 1 second)
-
+                      // Close the modal when clicking outside of it
                       window.onclick = function(event) {
                         if (event.target == modal) {
                           modal.style.display = "none";
+                          iframe.src = ""; // Optionally clear the iframe src when closing the modal
                         }
                       };
                     }
@@ -273,7 +272,7 @@ async function fetchSanityDocument() {
                         // '_blank',
                         //   `toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=${extWindowWidth},height=${extWindowHeight}`
                         // );
-                        openModalAndNewTab(src);
+                        openModalWithIframe(src);
                       });
 
                     resourceTypeElement.appendChild(storylineBtn);
