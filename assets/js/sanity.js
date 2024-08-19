@@ -298,7 +298,8 @@ async function fetchSanityDocument() {
                   const iframe = doc2.querySelector("iframe");
 
                   if (iframe) {
-                    const src = "https://apm.eskilled.com.au/pluginfile.php/91094/mod_resource/content/4/Communicaton%20skills.wdgt/index.html"; //Replace this URL to uploaded bookwidget file in eskilled 
+                    const src = iframe.getAttribute("src");
+                    //const src = "https://apm.eskilled.com.au/pluginfile.php/91094/mod_resource/content/4/Communicaton%20skills.wdgt/index.html"; //Replace this URL to uploaded bookwidget file in eskilled 
                     const extWindowWidth = window.screen.width;
                     const extWindowHeight = window.screen.height;
 
