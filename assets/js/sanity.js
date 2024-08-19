@@ -1,7 +1,8 @@
 async function fetchSanityDocument() {
 		    
     //const docId = "3da7a102-15ee-466a-a0d1-0bf58a1610b9"; //Replace this to relevant resource
-    const docId ="929399a8-6128-4767-a729-60cdd882afa2";
+    //const docId ="929399a8-6128-4767-a729-60cdd882afa2"; //Storyline
+    const docId = "44e22451-109f-45a1-a61e-0df39fe7fab3";
     
     const pid = "Mmk4MGNrMDE=";
     const dts = "cHJvZHVjdGlvbg==";
