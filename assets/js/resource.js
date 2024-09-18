@@ -14,23 +14,29 @@ async function fetchSanityResourceList() {
   
     try {
      // Make the API call
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Documents:', data.result);
-      })
-      .catch(error => {
-        console.error('Error fetching documents:', error);
+     console.log(resourceDoc);
+     const response = await fetch(resourceDoc, {
+        headers: {
+          Authorization: `Bearer ${aTc}`,
+          "Content-Type": "application/json",
+          'Referrer-Policy': 'no-referrer',
+          'X-Frame-Options': 'sameorigin',
+          'X-Content-Type-Options': 'nosniff',
+          'Permissions-Policy': 'accelerometer=(),autoplay=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),geolocation=(),gyroscope=(),magnetometer=(),microphone=(),midi=(),payment=(),picture-in-picture=(),publickey-credentials-get=(),screen-wake-lock=(),sync-xhr=(self),usb=(),web-share=(),xr-spatial-tracking=()',
+          'Content-Security-Policy': "default-src 'none';",
+        },
       });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const sanityDocument = data.result[0];
+
     } catch (error) {
-      console.error("Error fetching Sanity document:", error);
-      document.getElementById("contentlist").innerText = error.message;
-    }
+        console.error("Error fetching Sanity document:", error);
+        document.getElementById("content").innerText = error.message;
+      }
   }
   
   fetchSanityResourceList();
