@@ -7,7 +7,7 @@ async function fetchSanityResourceList() {
     const ds = atob(dts);
     const aTc = atob(tc); 
             
-    const query = '*[_type == "Resources"]';
+    const query = '*[_type == "topic"]';
   
     //const resourceDoc = `https://${prjId}.api.sanity.io/v1/data/query/${ds}?query=*[_id == "${docId}"]`;
     const resourceDoc = `https://${prjId}.api.sanity.io/v1/data/query/${ds}?query=${encodeURIComponent(query)}`;
