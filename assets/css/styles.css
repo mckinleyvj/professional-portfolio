@@ -706,9 +706,9 @@ CONTENT PAGE
 	align-items: center;
 }
 
-.container {
+/* .container {
 	max-width: 1200px;
-}
+} */
 
 .tableheaders {
 	border: 1px black solid;
