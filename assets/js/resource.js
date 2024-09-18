@@ -30,22 +30,22 @@ async function fetchSanityResourceList() {
       }
 
       const data = await response.json();
-      //const sanityDocument = data.result[0];
+      const sanityDocuments = data.result;
 
-      console.log(data);
-    //   if(sanityDocument) {
-    //         // Create a table
-    //         let table = '<table><tr><th>Title</th></tr>';
-    //         sanityDocument.forEach(doc => {
-    //             table += `<tr><td>${doc.title}</td></tr>`;
-    //         });
-    //         table += '</table>';
+      // console.log(data);
+      if(sanityDocuments) {
+            // Create a table
+            let table = '<table><tr><th>Title</th></tr>';
+            sanityDocuments.forEach(doc => {
+                table += `<tr><td>${doc.title}</td></tr>`;
+            });
+            table += '</table>';
 
-    //         // Insert the table into the div with id "contentlist"
-    //         document.getElementById("contentlist").innerHTML = table;
-    //     } else {
-    //         document.getElementById("contentlist").innerText = "";
-    //     }
+            // Insert the table into the div with id "contentlist"
+            document.getElementById("contentlist").innerHTML = table;
+        } else {
+            document.getElementById("contentlist").innerText = "";
+        }
 
     } catch (error) {
         console.error("Error fetching Sanity document:", error);
