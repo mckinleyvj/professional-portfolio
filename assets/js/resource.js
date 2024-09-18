@@ -1,11 +1,21 @@
+require('dotenv').config();
+
+const pid = process.env.PID;
+const dts = process.env.DTS;
+const tc = process.env.TC;
+
+const prjId = atob(pid);
+const ds = atob(dts);
+const aTc = atob(tc);
+
 async function fetchSanityResourceList() {
-    const pid = "Mmk4MGNrMDE=";
-    const dts = "cHJvZHVjdGlvbg==";
-    const tc = "c2tYYVVIcUpFNVdhdzFPeExXM0Y1TlM4SFUyQmM0bEhaN0F4ZWNWeldiUGhUa2RFRDhEYVlVdXlKY05sMHZyNnpMajBYWUMyRjIwODBzOW12aVZTSmE0SWNvem96SWF3emg5TmtCQXlOdjQweXlaR0tCb3JDRG5udmF4RXRjcGdzVU4wSUtWd29TcktDVTJ4cldBMjhGUTVVemx4eVBVZW9BTEttc3hqdzdtN3FmMXRTcWt6"; 
+    // const pid = "Mmk4MGNrMDE=";
+    // const dts = "cHJvZHVjdGlvbg==";
+    // const tc = "c2tYYVVIcUpFNVdhdzFPeExXM0Y1TlM4SFUyQmM0bEhaN0F4ZWNWeldiUGhUa2RFRDhEYVlVdXlKY05sMHZyNnpMajBYWUMyRjIwODBzOW12aVZTSmE0SWNvem96SWF3emg5TmtCQXlOdjQweXlaR0tCb3JDRG5udmF4RXRjcGdzVU4wSUtWd29TcktDVTJ4cldBMjhGUTVVemx4eVBVZW9BTEttc3hqdzdtN3FmMXRTcWt6"; 
     
-    const prjId = atob(pid);
-    const ds = atob(dts);
-    const aTc = atob(tc); 
+    // const prjId = atob(pid);
+    // const ds = atob(dts);
+    // const aTc = atob(tc); 
             
     //const query = `*[_type == 'topic' && __i18n_lang == 'en'] | order(title) {_type,title,resource_type,__i18n_lang,_createdAt,_updatedAt}`;
     //const query = `*[_type == 'topic' && __i18n_lang == 'en' && !(_id in path("drafts.**"))] | order(title) {_id,_type,title,resource_type,__i18n_lang,_createdAt,_updatedAt}`;
