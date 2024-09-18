@@ -87,6 +87,7 @@ async function fetchSanityResourceList() {
             table += '</table>';
 
             // Insert the table into the div with id "contentlist"
+            document.getElementById("contentlist").innerText = "";
             document.getElementById("contentlist").innerHTML = table;
         } else {
             document.getElementById("contentlist").innerText = "";
