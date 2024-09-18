@@ -64,25 +64,25 @@ async function fetchSanityResourceList() {
                 resourceTypeFilter.appendChild(option);
             });
 
-            // Create a table
-            let table = `<table style="border-collapse: collapse; width: 100%;">
-                            <tr class="tableheaders">
-                                <th style="max-width: 365px;">ID</th>
-                                <th style="max-width: 520px;">Title</th>
-                                <th style="max-width: 103px;">Resource Type</th>
-                                <th style="max-width: 70px;">Language</th>
-                                <th style="max-width: 133px;">Created At</th>
-                                <th style="max-width: 133px;">Updated At</th>
-                            </tr>`;
+             // Create a table
+             let table = `<table style="border-collapse: collapse; width: 100%; table-layout: fixed;">
+             <tr class="tableheaders">
+                 <th style="max-width: 365px; width: 365px;">ID</th>
+                 <th style="max-width: 520px; width: 520px;">Title</th>
+                 <th style="max-width: 103px; width: 103px;">Resource Type</th>
+                 <th style="max-width: 70px; width: 70px;">Language</th>
+                 <th style="max-width: 133px; width: 133px;">Created At</th>
+                 <th style="max-width: 133px; width: 133px;">Updated At</th>
+             </tr>`;
             sanityDocuments.forEach(doc => {
-                table += `<tr class="tablerows">
-                            <td class="tablecells">${doc._id}</td>
-                            <td class="tablecells">${doc.title}</td>
-                            <td class="tablecells">${doc.resource_type}</td>
-                            <td class="tablecells">${doc.__i18n_lang}</td>
-                            <td class="tablecells">${formatDate(doc._createdAt)}</td>
-                            <td class="tablecells">${formatDate(doc._updatedAt)}</td>
-                        </tr>`;
+            table += `<tr class="tablerows">
+                        <td class="tablecells">${doc._id}</td>
+                        <td class="tablecells">${doc.title}</td>
+                        <td class="tablecells">${doc.resource_type}</td>
+                        <td class="tablecells">${doc.__i18n_lang}</td>
+                        <td class="tablecells">${formatDate(doc._createdAt)}</td>
+                        <td class="tablecells">${formatDate(doc._updatedAt)}</td>
+                    </tr>`;
             });
             table += '</table>';
 
