@@ -32,10 +32,11 @@ async function fetchSanityResourceList() {
       const data = await response.json();
       const sanityDocument = data.result[0];
 
+      console.log(sanityDocument);
       if(sanityDocument) {
             // Create a table
             let table = '<table><tr><th>Title</th></tr>';
-            sanityDocuments.forEach(doc => {
+            sanityDocument.forEach(doc => {
                 table += `<tr><td>${doc.title}</td></tr>`;
             });
             table += '</table>';
