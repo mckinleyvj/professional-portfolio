@@ -42,6 +42,12 @@ async function fetchSanityResourceList() {
             //     table += `<tr><td>${doc.title}</td><td>${doc.__i18n_lang}</td></tr>`;
             // });
             // table += '</table>';
+            // Function to format date
+            function formatDate(dateString) {
+                const options = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                return new Date(dateString).toLocaleDateString('en-GB', options).replace(',', '');
+            }
+
 
             // Create a table
             let table = `<table><tr class="tableHeader"><th>ID</th><th>Title</th><th>Resource Type</th><th>Language</th><th>Type</th><th>Created At</th><th>Updated At</th></tr>`;
@@ -52,8 +58,8 @@ async function fetchSanityResourceList() {
                             <td>${doc.resource_type}</td>
                             <td>${doc.__i18n_lang}</td>
                             <td>${doc._type}</td>
-                            <td>${doc._createdAt}</td>
-                            <td>${doc._updatedAt}</td>
+                            <td>${formatDate(doc._createdAt)}</td>
+                            <td>${formatDate(doc._updatedAt)}</td>
                         </tr>`;
             });
             table += '</table>';
