@@ -8,7 +8,8 @@ async function fetchSanityResourceList() {
     const aTc = atob(tc); 
             
     //const query = `*[_type == 'topic' && __i18n_lang == 'en'] | order(title) {_type,title,resource_type,__i18n_lang,_createdAt,_updatedAt}`;
-    const query = `*[_type == 'topic' && __i18n_lang == 'en' && !(_id in path("drafts.**"))] | order(title) {_id,_type,title,resource_type,__i18n_lang,_createdAt,_updatedAt}`;
+    //const query = `*[_type == 'topic' && __i18n_lang == 'en' && !(_id in path("drafts.**"))] | order(title) {_id,_type,title,resource_type,__i18n_lang,_createdAt,_updatedAt}`;
+    const query = `*[_type == 'topic' && !(_id in path("drafts.**"))] | order(__i18n_lang asc, updatedAt asc) {_id,_type,title,resource_type,__i18n_lang,_createdAt,_updatedAt}`;
 
     //const resourceDoc = `https://${prjId}.api.sanity.io/v1/data/query/${ds}?query=*[_id == "${docId}"]`;
     const resourceDoc = `https://${prjId}.api.sanity.io/v1/data/query/${ds}?query=${encodeURIComponent(query)}`;

@@ -16,7 +16,7 @@ GLOBAL SELECTOR
 ------------------------------------*/
 * {
 	font-family: "Red Hat Display", sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 	color: var(--super_black);
 }
 
@@ -712,6 +712,7 @@ CONTENT PAGE
 
 .tableHeader {
 	border: 1px black solid;
+	text-align: left;
 }
 
 /*------------------------------------
