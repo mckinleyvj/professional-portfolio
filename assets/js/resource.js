@@ -8,7 +8,7 @@ async function fetchSanityResourceList() {
     const aTc = atob(tc); 
             
     //const query = `*[_type == 'topic' && __i18n_lang == 'en'] | order(title) {_type,title,resource_type,__i18n_lang,_createdAt,_updatedAt}`;
-    const query = `*[_type == 'topic' && __i18n_lang == 'en' && !(_id in path("drafts.**"))] | order(title)`;
+    const query = `*[_type == 'topic' && __i18n_lang == 'en' && !(_id in path("drafts.**"))] | order(title) {_type,title,resource_type,__i18n_lang,_createdAt,_updatedAt}`;
 
     //const resourceDoc = `https://${prjId}.api.sanity.io/v1/data/query/${ds}?query=*[_id == "${docId}"]`;
     const resourceDoc = `https://${prjId}.api.sanity.io/v1/data/query/${ds}?query=${encodeURIComponent(query)}`;
@@ -35,10 +35,25 @@ async function fetchSanityResourceList() {
 
       // console.log(data);
       if(sanityDocuments) {
-             // Create a table
-            let table = `<table><tr><th style="border: black 1px solid;">Title</th><th style="border: black 1px solid;">Language</th></tr>`;
+            //  // Create a table
+            // let table = `<table><tr><th style="border: black 1px solid;">Title</th><th style="border: black 1px solid;">Language</th></tr>`;
+            // sanityDocuments.forEach(doc => {
+            //     table += `<tr><td>${doc.title}</td><td>${doc.__i18n_lang}</td></tr>`;
+            // });
+            // table += '</table>';
+
+            // Create a table
+            let table = '<table><tr><th style="border: black 1px solid;">ID</th><th style="border: black 1px solid;">Title</th><th style="border: black 1px solid;">Resource Type</th><th style="border: black 1px solid;">Language</th><th>Type</th><th style="border: black 1px solid;">Created At</th><th style="border: black 1px solid;">Updated At</th></tr>';
             sanityDocuments.forEach(doc => {
-                table += `<tr><td>${doc.title}</td><td>${doc.__i18n_lang}</td></tr>`;
+                table += `<tr>
+                            <td>${doc._id}</td>
+                            <td>${doc.title}</td>
+                            <td>${doc.resource_type}</td>
+                            <td>${doc.__i18n_lang}</td>
+                            <td>${doc._type}</td>
+                            <td>${doc._createdAt}</td>
+                            <td>${doc._updatedAt}</td>
+                        </tr>`;
             });
             table += '</table>';
 
