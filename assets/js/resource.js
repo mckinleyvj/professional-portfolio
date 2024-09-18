@@ -65,7 +65,7 @@ async function fetchSanityResourceList() {
             });
 
              // Create a table
-             let table = `<table style="border-collapse: collapse; width: 100%; table-layout: fixed;">
+             let table = `<table style="border-collapse: collapse; width: 85vw; table-layout: fixed;">
              <tr class="tableheaders">
                  <th style="max-width: 365px; width: 365px;">ID</th>
                  <th style="max-width: 520px; width: 520px;">Title</th>
