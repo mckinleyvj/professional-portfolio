@@ -65,7 +65,15 @@ async function fetchSanityResourceList() {
             });
 
             // Create a table
-            let table = `<table style="border-collapse: collapse; width: 100%;"><tr class="tableheaders"><th>ID</th><th>Title</th><th>Resource Type</th><th>Language</th><th>Created At</th><th>Updated At</th></tr>`;
+            let table = `<table style="border-collapse: collapse; width: 100%;">
+                            <tr class="tableheaders">
+                                <th style="max-width: 365px;">ID</th>
+                                <th style="max-width: 520px;>Title</th>
+                                <th style="max-width: 103px;>Resource Type</th>
+                                <th style="max-width: 70px;>Language</th>
+                                <th style="max-width: 133px;>Created At</th>
+                                <th style="max-width: 133px;>Updated At</th>
+                            </tr>`;
             sanityDocuments.forEach(doc => {
                 table += `<tr class="tablerows">
                             <td class="tablecells">${doc._id}</td>
