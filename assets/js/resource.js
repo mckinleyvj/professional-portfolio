@@ -42,16 +42,26 @@ async function fetchSanityResourceList() {
                 return new Date(dateString).toLocaleDateString('en-GB', options).replace(',', '');
             }
 
-            // Get unique languages
-            const languages = [...new Set(sanityDocuments.map(doc => doc.__i18n_lang))];
-            const languageFilter = document.getElementById("languageFilter");
+             // Get unique languages and resource types
+             const languages = [...new Set(sanityDocuments.map(doc => doc.__i18n_lang))];
+             const resourceTypes = [...new Set(sanityDocuments.map(doc => doc.resource_type))];
+             const languageFilter = document.getElementById("languageFilter");
+             const resourceTypeFilter = document.getElementById("resourceTypeFilter");
 
-             // Populate the dropdown
-             languages.forEach(lang => {
+             // Populate the language dropdown
+            languages.forEach(lang => {
                 const option = document.createElement("option");
                 option.value = lang;
                 option.text = lang;
                 languageFilter.appendChild(option);
+            });
+
+            // Populate the resource type dropdown
+            resourceTypes.forEach(type => {
+                const option = document.createElement("option");
+                option.value = type;
+                option.text = type;
+                resourceTypeFilter.appendChild(option);
             });
 
             // Create a table
@@ -82,13 +92,16 @@ async function fetchSanityResourceList() {
   
   fetchSanityResourceList();
 
-  function filterTableByLanguage() {
+  function filterTable() {
     const selectedLanguage = document.getElementById("languageFilter").value;
+    const selectedResourceType = document.getElementById("resourceTypeFilter").value;
     const rows = document.querySelectorAll("#contentlist .tablerows");
 
     rows.forEach(row => {
         const language = row.querySelector(".tablecells:nth-child(4)").textContent;
-        if (selectedLanguage === "all" || language === selectedLanguage) {
+        const resourceType = row.querySelector(".tablecells:nth-child(3)").textContent;
+        if ((selectedLanguage === "all" || language === selectedLanguage) &&
+            (selectedResourceType === "all" || resourceType === selectedResourceType)) {
             row.style.display = "";
         } else {
             row.style.display = "none";
