@@ -33,7 +33,7 @@ async function fetchSanityResourceList() {
 
       const data = await response.json();
       const sanityDocuments = data.result;
-      
+
       if(sanityDocuments) {
             //  // Create a table
             // let table = `<table><tr><th style="border: black 1px solid;">Title</th><th style="border: black 1px solid;">Language</th></tr>`;
@@ -49,15 +49,15 @@ async function fetchSanityResourceList() {
 
 
             // Create a table
-            let table = `<table><tr class="tableheaders"><th>ID</th><th>Title</th><th>Resource Type</th><th>Language</th><th>Created At</th><th>Updated At</th></tr>`;
+            let table = `<table style="border-collapse: collapse; width: 100%;"><tr class="tableheaders"><th>ID</th><th>Title</th><th>Resource Type</th><th>Language</th><th>Created At</th><th>Updated At</th></tr>`;
             sanityDocuments.forEach(doc => {
                 table += `<tr class="tablerows">
-                            <td>${doc._id}</td>
-                            <td>${doc.title}</td>
-                            <td>${doc.resource_type}</td>
-                            <td>${doc.__i18n_lang}</td>
-                            <td>${formatDate(doc._createdAt)}</td>
-                            <td>${formatDate(doc._updatedAt)}</td>
+                            <td class="tablecells">${doc._id}</td>
+                            <td class="tablecells">${doc.title}</td>
+                            <td class="tablecells">${doc.resource_type}</td>
+                            <td class="tablecells">${doc.__i18n_lang}</td>
+                            <td class="tablecells">${formatDate(doc._createdAt)}</td>
+                            <td class="tablecells">${formatDate(doc._updatedAt)}</td>
                         </tr>`;
             });
             table += '</table>';

@@ -716,8 +716,17 @@ CONTENT PAGE
 	vertical-align: top;
 }
 
+.tableheaders th {
+	border: 1px black solid;
+}
+
 .tablerows {
 	vertical-align: top;
+	border: 1px solid black;
+}
+
+.tablecells {
+	border: 1px solid black;
 }
 
 /*------------------------------------
