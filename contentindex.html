@@ -11,6 +11,11 @@
     <div class="maincontainer">
         <div class="container">
             <h1>Global Content Library</h1>
+            <div>
+                <select id="languageFilter" onchange="filterTableByLanguage()">
+                    <option value="all">All Languages</option>
+                </select>
+            </div>
             <div id="contentlist"></div>
         </div>
     </div>

@@ -36,18 +36,23 @@ async function fetchSanityResourceList() {
       const sanityDocuments = data.result;
 
       if(sanityDocuments) {
-            //  // Create a table
-            // let table = `<table><tr><th style="border: black 1px solid;">Title</th><th style="border: black 1px solid;">Language</th></tr>`;
-            // sanityDocuments.forEach(doc => {
-            //     table += `<tr><td>${doc.title}</td><td>${doc.__i18n_lang}</td></tr>`;
-            // });
-            // table += '</table>';
             // Function to format date
             function formatDate(dateString) {
                 const options = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
                 return new Date(dateString).toLocaleDateString('en-GB', options).replace(',', '');
             }
 
+            // Get unique languages
+            const languages = [...new Set(sanityDocuments.map(doc => doc.__i18n_lang))];
+            const languageFilter = document.getElementById("languageFilter");
+
+             // Populate the dropdown
+             languages.forEach(lang => {
+                const option = document.createElement("option");
+                option.value = lang;
+                option.text = lang;
+                languageFilter.appendChild(option);
+            });
 
             // Create a table
             let table = `<table style="border-collapse: collapse; width: 100%;"><tr class="tableheaders"><th>ID</th><th>Title</th><th>Resource Type</th><th>Language</th><th>Created At</th><th>Updated At</th></tr>`;
@@ -76,3 +81,17 @@ async function fetchSanityResourceList() {
   }
   
   fetchSanityResourceList();
+
+  function filterTableByLanguage() {
+    const selectedLanguage = document.getElementById("languageFilter").value;
+    const rows = document.querySelectorAll("#contentlist .tablerows");
+
+    rows.forEach(row => {
+        const language = row.querySelector(".tablecells:nth-child(4)").textContent;
+        if (selectedLanguage === "all" || language === selectedLanguage) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
