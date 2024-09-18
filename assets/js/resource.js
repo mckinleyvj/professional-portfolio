@@ -34,10 +34,10 @@ async function fetchSanityResourceList() {
 
       // console.log(data);
       if(sanityDocuments) {
-            // Create a table
-            let table = '<table><tr><th>Title</th></tr>';
+             // Create a table
+            let table = `<table><tr><th style="border: black 1px solid;">Title</th><th style="border: black 1px solid;">Language</th></tr>`;
             sanityDocuments.forEach(doc => {
-                table += `<tr><td>${doc.title}</td></tr>`;
+                table += `<tr><td>${doc.title}</td><td>${doc.__i18n_lang}</td></tr>`;
             });
             table += '</table>';
 
