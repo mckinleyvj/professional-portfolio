@@ -33,8 +33,7 @@ async function fetchSanityResourceList() {
 
       const data = await response.json();
       const sanityDocuments = data.result;
-
-      // console.log(data);
+      
       if(sanityDocuments) {
             //  // Create a table
             // let table = `<table><tr><th style="border: black 1px solid;">Title</th><th style="border: black 1px solid;">Language</th></tr>`;
