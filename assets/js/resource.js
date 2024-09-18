@@ -9,7 +9,7 @@ async function fetchSanityResourceList() {
             
     //const query = `*[_type == 'topic' && __i18n_lang == 'en'] | order(title) {_type,title,resource_type,__i18n_lang,_createdAt,_updatedAt}`;
     //const query = `*[_type == 'topic' && __i18n_lang == 'en' && !(_id in path("drafts.**"))] | order(title) {_id,_type,title,resource_type,__i18n_lang,_createdAt,_updatedAt}`;
-    const query = `*[_type == 'topic' && !(_id in path("drafts.**"))] | order(__i18n_lang asc, updatedAt asc) {_id,_type,title,resource_type,__i18n_lang,_createdAt,_updatedAt}`;
+    const query = `*[_type == 'topic' && !(_id in path("drafts.**"))] | order(__i18n_lang asc, _updatedAt desc) {_id,_type,title,resource_type,__i18n_lang,_createdAt,_updatedAt}`;
 
     //const resourceDoc = `https://${prjId}.api.sanity.io/v1/data/query/${ds}?query=*[_id == "${docId}"]`;
     const resourceDoc = `https://${prjId}.api.sanity.io/v1/data/query/${ds}?query=${encodeURIComponent(query)}`;
@@ -50,9 +50,9 @@ async function fetchSanityResourceList() {
 
 
             // Create a table
-            let table = `<table><tr class="tableHeader"><th>ID</th><th>Title</th><th>Resource Type</th><th>Language</th><th>Type</th><th>Created At</th><th>Updated At</th></tr>`;
+            let table = `<table><tr class="tableheaders"><th>ID</th><th>Title</th><th>Resource Type</th><th>Language</th><th>Type</th><th>Created At</th><th>Updated At</th></tr>`;
             sanityDocuments.forEach(doc => {
-                table += `<tr>
+                table += `<tr class="tablerows">
                             <td>${doc._id}</td>
                             <td>${doc.title}</td>
                             <td>${doc.resource_type}</td>

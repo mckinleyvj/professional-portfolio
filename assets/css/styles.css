@@ -710,9 +710,14 @@ CONTENT PAGE
 	max-width: 1200px;
 }
 
-.tableHeader {
+.tableheaders {
 	border: 1px black solid;
 	text-align: left;
+	vertical-align: top;
+}
+
+.tablerows {
+	vertical-align: top;
 }
 
 /*------------------------------------
