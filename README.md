@@ -48,4 +48,4 @@ Page Responsiveness - Tablet
 ## Related Links:
 
 - GitHub Repository: https://github.com/mckinleyvj/professional-portfolio
-- GitHub Live URL: https://mckinleyvj.github.io/professional-portfolio/
+- GitHub Live URL: https://mckinleyvj.github.io/professional-portfolio/index.html
