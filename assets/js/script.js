@@ -1,123 +1,100 @@
-var $timeDisplayEl = $('#time-now');
-var $sendBtn = $('#sendBtn');
-var $username = $('#usernameTxt');
-var $email = $('#emailTxt');
-var $message = $('#commentTxt');
+(() => {
+	'use strict';
 
-var $workContent = $('#work-content-container');
+	const timeElement = document.getElementById('time-now');
+	const yearElement = document.getElementById('current-year');
+	const navToggle = document.querySelector('.nav-toggle');
+	const siteNav = document.getElementById('site-nav');
 
-$timeDisplayEl.attr('class', 'time-now');
+	function updateClock() {
+		if (!timeElement) return;
 
-function displayTime() {
-	var rightNow = moment().format('hh:mm:ss a');
-	$timeDisplayEl.text(rightNow);
-}
-setInterval(displayTime, 1000);
+		const now = new Date();
 
-function getGitHubRepos() {
-	// var githubREPO1 = 'https://api.github.com/repos/mckinleyvj/password-generator';
-	var githubREPO2 = 'https://api.github.com/repos/mckinleyvj/professional-portfolio';
+		timeElement.textContent = new Intl.DateTimeFormat('en-AU', {
+			hour: '2-digit',
+			minute: '2-digit',
+			second: '2-digit',
+			hour12: false,
+			timeZone: 'Australia/Melbourne',
+		}).format(now);
+	}
 
-	$.ajax({
-		url: githubREPO2,
-		method: 'GET',
-		dataType: 'json',
+	updateClock();
+	window.setInterval(updateClock, 1000);
 
-		success: function (res) {
-			var githubRepoList = res;
-			var displayList = '';
+	if (yearElement) {
+		yearElement.textContent = String(new Date().getFullYear());
+	}
 
-			var date_updtd = moment
-				.parseZone(githubRepoList.updated_at, 'YYYY-MM-DDTHH:mm:ss[Z]')
-				.format('dddd, DD-MM-YYYY, HH:mm:ss');
+	if (navToggle && siteNav) {
+		navToggle.addEventListener('click', () => {
+			const isOpen = siteNav.classList.toggle('is-open');
+			navToggle.setAttribute('aria-expanded', String(isOpen));
+		});
 
-			displayList = `
-          <figure>
-          <a href="${githubRepoList.html_url}"><img src="./assets/images/${
-				githubRepoList.name
-			}.png" alt="${githubRepoList.name}"></a>
-		  <figcaption id="#fig-glow">Repository: ${githubRepoList.name.toUpperCase()}</figcaption>
-          <div class="flex-fig-table">
-          <div class="fig-table">
-          ${githubRepoList.description}</span>
-          <span class="fig-desc">Language: ${githubRepoList.language}</span>
-          <span class="fig-desc">Last update: ${date_updtd}</span>
-          <span class="fig-desc">Live URL: <a href="https://${
-				githubRepoList.owner.login
-			}.github.io/${githubRepoList.name}" class="fig-desc" target="_blank">https://${
-				githubRepoList.owner.login
-			}.github.io/${githubRepoList.name}</a></span>
-          </div>
-          </div>
-          </figure>
-          `;
+		siteNav.querySelectorAll('a').forEach((link) => {
+			link.addEventListener('click', () => {
+				siteNav.classList.remove('is-open');
+				navToggle.setAttribute('aria-expanded', 'false');
+			});
+		});
+	}
 
-			$workContent.append(displayList);
+	const repoDescription = document.getElementById('repo-description');
+	const repoMeta = document.getElementById('repo-meta');
+	const repoLink = document.getElementById('repo-link');
 
-			// for (var i = 0; i < githubRepoList.length; i++) {
-			// 	var date_updtd = moment
-			// 		.parseZone(githubRepoList[i].updated_at, 'YYYY-MM-DDTHH:mm:ss[Z]')
-			// 		.format('dddd, DD-MM-YYYY, HH:mm:ss');
+	const escapeHtml = (value) =>
+		String(value ?? '')
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;')
+			.replace(/'/g, '&#039;');
 
-			// 	displayList = `
-			//     <figure>
-			//     <figcaption id="#fig-glow">Repository: ${githubRepoList[
-			// 	i
-			// ].name.toUpperCase()}</figcaption>
-			//     <a href="${githubRepoList[i].html_url}"><img src="./assets/images/${
-			// 		githubRepoList[i].name
-			// 	}.png" alt="${githubRepoList[i].name}"></a>
-			//     <div class="flex-fig-table">
-			//     <div class="fig-table">
-			//     <span class="fig-desc">Description:<br>
-			//     ${githubRepoList[i].description}</span>
-			//     <span class="fig-desc">Language: ${githubRepoList[i].language}</span>
-			//     <span class="fig-desc">Last update: ${date_updtd}</span>
-			//     <span class="fig-desc">Live URL: <a href="https://${
-			// 	githubRepoList[i].owner.login
-			// }.github.io/${githubRepoList[i].name}" class="fig-desc" target="_blank">https://${
-			// 		githubRepoList[i].owner.login
-			// 	}.github.io/${githubRepoList[i].name}</a></span>
-			//     </div>
-			//     </div>
-			//     </figure>
-			//     `;
+	async function loadRepository() {
+		if (!repoMeta || !repoLink) return;
 
-			// 	$workContent.append(displayList);
-			// }
-		},
-		error: function (err) {
-			console.error('Error\n' + err.message);
-			$workContent
-				.attr('style', 'color: red')
-				.append('Error. Could not display repositories at this time.');
-		},
-	});
-}
+		const fallbackUrl = 'https://github.com/mckinleyvj/professional-portfolio';
 
-function initiate() {
-	getGitHubRepos();
-}
+		try {
+			const response = await fetch(
+				'https://api.github.com/repos/mckinleyvj/professional-portfolio',
+				{
+					headers: {
+						Accept: 'application/vnd.github+json',
+					},
+				},
+			);
 
-initiate();
+			if (!response.ok) {
+				throw new Error(`GitHub API returned ${response.status}`);
+			}
 
-$(document).ready(function () {
-	$sendBtn.on('click', function (event) {
-		event.preventDefault();
+			const repo = await response.json();
 
-		var userName = $username.val();
-		var userMail = $email.val();
-		var userMsg = $message.val();
+			if (repoDescription && repo.description) {
+				repoDescription.textContent = repo.description;
+			}
 
-		console.log(
-			userName + ' of ' + userMail + ' sent you a message. The message is ' + userMsg
-		);
+			repoMeta.innerHTML = [
+				repo.language ? `<span>${escapeHtml(repo.language)}</span>` : '',
+				`<span>${Number(repo.stargazers_count || 0)} stars</span>`,
+				`<span>${Number(repo.forks_count || 0)} forks</span>`,
+				repo.updated_at
+					? `<span>Updated ${new Date(repo.updated_at).toLocaleDateString('en-AU')}</span>`
+					: '',
+			]
+				.filter(Boolean)
+				.join('');
 
-		alert('Feature not yet available. Please contact me through the provided contact details.');
-		$username.innerHTML = '';
-		$email.innerHTML = '';
-		$message.innerHTML = '';
+			repoLink.href = repo.html_url || fallbackUrl;
+		} catch (error) {
+			repoMeta.innerHTML = '<span>GitHub repository</span><span>Public project</span>';
+			repoLink.href = fallbackUrl;
+		}
+	}
 
-		location.reload();
-	});
-});
+	loadRepository();
+})();
